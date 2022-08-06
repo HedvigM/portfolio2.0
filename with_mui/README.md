@@ -1,1 +1,0 @@
-A starter template for creating NextJS + Typescript apps, with MUI (formerly Material UI) for rapid prototyping.
