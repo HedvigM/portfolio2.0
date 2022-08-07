@@ -40,21 +40,28 @@ export const theme = createTheme({
       fontWeight: 700,
       fontFamily: 'Roboto',
       textTransform: 'uppercase',
+      
     },
     h4: {
       fontSize: '1.15rem',
-      fontWeight: 700
+      fontWeight: 400,
+      fontFamily: 'Roboto',
+      textTransform: 'uppercase',
+      color: '#66BFBF',
     },
     h5: {
       fontSize: '1.07rem',
-      fontWeight: 700
+      fontWeight: 700,
+      lineHeight: '1.4',
+
     },
     h6: {
       fontSize: '1rem',
-      fontWeight: 700,
-      color: 'white',
+      fontWeight: 300,
+      color: 'black',
       backgroundColor: '#66BFBF',
       padding: '0px 10px',
+      lineHeight: '1.4',
       textAlign: 'center',
       display: 'inline',
       fontFamily: 'Roboto',
@@ -73,6 +80,6 @@ export const theme = createTheme({
     },
     button: {
       textTransform: 'none'
-    }
+    },
   }
 });
