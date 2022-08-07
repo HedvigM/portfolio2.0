@@ -5,6 +5,8 @@ import { Container, Box, Paper, Typography } from '@mui/material';
 import { Header } from './Header';
 import { Presentation } from './Presentation';
 import { FeaturedProjects } from './FeaturedProjects';
+import { OtherProjects } from './OtherProjects';
+import { Thoughts } from './Thoughts';
 
 const IndexPage: NextPage<{}> = ({}) => {
   return (
@@ -15,6 +17,8 @@ const IndexPage: NextPage<{}> = ({}) => {
       <Header />
       <Presentation />
       <FeaturedProjects />
+      <OtherProjects />
+      <Thoughts />
       <Box mt={6}>
         <Paper>
           <Box p={2}>
