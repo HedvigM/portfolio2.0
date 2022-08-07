@@ -1,13 +1,10 @@
-import { Avatar, Box, Container, Paper, Typography } from '@mui/material';
+import { Avatar, Box, Container, Typography } from '@mui/material';
 import React from 'react';
 import LogoutIcon from '@mui/icons-material/Logout';
-import Github from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { blueGrey } from '@mui/material/colors';
 
 export const Header = () => {
   library.add(fab);
