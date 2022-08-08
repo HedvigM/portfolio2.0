@@ -3,10 +3,11 @@ import { Box, Container, Typography } from '@mui/material';
 import styled from '@emotion/styled';
 import React from 'react';
 import { OtherProjectsText } from './Text';
+import { grey } from '@mui/material/colors';
 
 export const OtherProjects = () => {
   return (
-    <Container sx={{ background: '#EAF6F6' }}>
+    <Box sx={{ background: '#EAF6F6' }}>
       <Container maxWidth='md'>
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
@@ -30,7 +31,7 @@ export const OtherProjects = () => {
                 sx={{ backgroundColor: 'secondary.main', color: 'white' }}
               >
                 <H6Variant
-                  aria-label='Link to the deployed project'
+                  aria-label={text.ariaLabel}
                   aria-pressed='false'
                   role='button'
                   target='_blank'
@@ -44,20 +45,20 @@ export const OtherProjects = () => {
                 sx={{ backgroundColor: 'secondary.main' }}
               >
                 <H6Variant
-                  aria-label='Link to the deployed project'
+                  aria-label={text.ariaLabel}
                   aria-pressed='false'
                   role='button'
                   target='_blank'
                   href={text.github}
                 >
-                  <FontAwesomeIcon icon={['fab', 'github']} />
+                  <FontAwesomeIcon icon={[text.iconImage1, text.iconImage2]} />
                 </H6Variant>
               </Typography>
             </Box>
           </Box>
         ))}
       </Container>
-    </Container>
+    </Box>
   );
 };
 
