@@ -3,6 +3,7 @@ import React from 'react';
 import { ThoughtsText, MoreThoughtsText } from './Text';
 import styled from '@emotion/styled';
 
+/* Link to the thoughts */
 export const Thoughts = () => {
   return (
     <Box sx={{ background: 'white', marginBottom: '50px' }}>
@@ -33,7 +34,11 @@ export const Thoughts = () => {
                 alignItems: 'center',
               }}
             >
-              <Box>
+              <Box
+                sx={{
+                  padding: '10px',
+                }}
+              >
                 <Typography variant='h4'>{text.date}</Typography>
                 <Typography variant='h5'>{text.name}</Typography>
                 <Typography variant='body1'>
@@ -42,9 +47,28 @@ export const Thoughts = () => {
                     &nbsp;&gt;&gt;
                   </Typography>
                 </Typography>
+                <Typography
+                  variant='h6'
+                  sx={{ backgroundColor: 'secondary.main', color: 'white' }}
+                >
+                  <H6Variant
+                    aria-label='Link to the deployed project'
+                    aria-pressed='false'
+                    role='button'
+                    target='_blank'
+                    href={text.href}
+                  >
+                    {text.more}
+                  </H6Variant>
+                </Typography>
               </Box>
             </CardMedia>
-            <Image></Image>
+            <CardMedia
+              component='img'
+              image={text.image}
+              alt={text.alt}
+              sx={{ maxWidth: '150px' }}
+            ></CardMedia>
           </Card>
         ))}
 
@@ -56,26 +80,42 @@ export const Thoughts = () => {
         <Container maxWidth='sm'>
           {MoreThoughtsText.map((text, index) => (
             <Box key={index} sx={{ paddingBottom: '20px' }}>
-              <Typography
-                variant='h4'
-                sx={{ display: 'inline', paddingRight: '10px' }}
-              >
-                {text.date}
-              </Typography>
-              <Typography variant='h5' sx={{ display: 'inline' }}>
-                <Link
-                  href={text.href}
-                  role='button'
-                  aria-pressed='false'
-                  aria-label='Link to article'
-                  target='_blank'
-                  rel='noreferrer'
+              <Box>
+                <Typography
+                  variant='h4'
+                  sx={{ display: 'inline', paddingRight: '10px' }}
                 >
-                  {text.text}
-                </Link>
-                <Typography sx={{ display: 'inline' }} variant='h4'>
-                  &nbsp;&gt;&gt;
+                  {text.date}
                 </Typography>
+                <Typography variant='h5' sx={{ display: 'inline' }}>
+                  <Link
+                    href={text.href}
+                    role='button'
+                    aria-pressed='false'
+                    aria-label='Link to article'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    {text.text}
+                  </Link>
+                  <Typography sx={{ display: 'inline' }} variant='h4'>
+                    &nbsp;&gt;&gt;
+                  </Typography>
+                </Typography>
+              </Box>
+              <Typography
+                variant='h6'
+                sx={{ backgroundColor: 'secondary.main', color: 'white' }}
+              >
+                <H6Variant
+                  aria-label='Link to the deployed project'
+                  aria-pressed='false'
+                  role='button'
+                  target='_blank'
+                  href={text.href}
+                >
+                  {text.more}
+                </H6Variant>
               </Typography>
             </Box>
           ))}
@@ -116,4 +156,9 @@ const Link = styled.a`
     color: #ff0063;
     text-decoration: underline;
   }
+`;
+
+const H6Variant = styled.a`
+  color: white;
+  text-decoration: none;
 `;
