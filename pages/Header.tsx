@@ -5,99 +5,84 @@ import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { HeaderIconText, HeaderText } from './Text';
 
 export const Header = () => {
   library.add(fab);
   return (
-    <Container sx={{ background: 'black' }}>
+    <Box sx={{ background: 'black' }}>
       <Container maxWidth='md'>
         <Icons>
-          <Icon
-            href='https://github.com/HedvigM'
-            target='_blank'
-            rel='noreferrer noopener'
-            aria-label='a link to my GitHub account'
-          >
-            <FontAwesomeIcon icon={['fab', 'github']} />
-          </Icon>
-          <Icon
-            href='https://www.linkedin.com/in/hedvig-mejstedt'
-            target='_blank'
-            rel='noreferrer noopener'
-            aria-label='a link to my linkedin account'
-          >
-            <FontAwesomeIcon icon={['fab', 'linkedin-in']} />
-          </Icon>
-          <Icon
-            href='https://stackoverflow.com/users/16650863/hedvig'
-            target='_blank'
-            rel='noreferrer noopener'
-            aria-label='a link to my stack-overflow account'
-          >
-            <FontAwesomeIcon icon={['fab', 'stack-overflow']} />
-          </Icon>
+          {HeaderIconText.map((text, index) => (
+            <Icon
+              href={text.href}
+              target='_blank'
+              rel='noreferrer noopener'
+              aria-label={text.ariaLabel}
+            >
+              <FontAwesomeIcon icon={[text.iconImage1, text.iconImage2]} />
+            </Icon>
+          ))}
         </Icons>
-        <Box
-          sx={{
-            background: 'pink',
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
-        >
-          <Box>
-            <Box
-              sx={{
-                color: 'white',
-                textTransform: 'uppercase',
-                fontSize: 'large',
-              }}
-            >
-              <p>
-                portfolio:
-                <br />
-                <strong> Hedvig Mejstedt</strong>
-              </p>
-            </Box>
-            <Box>
-              <Typography variant={'h1'}>
-                frontend
-                <br />
-                developer
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                color: 'white',
-                textTransform: 'uppercase',
-                fontSize: 'large',
-              }}
-            >
-              <p>+ some thing more...</p>
-            </Box>
-          </Box>
+        {HeaderText.map((text, index) => (
           <Box
             sx={{
+              background: 'pink',
               display: 'flex',
-              justifyContent: 'end',
-              background: 'hotpink',
+              justifyContent: 'space-between',
             }}
           >
-            <Avatar
+            <Box key={index} sx={{ maxWidth: '200px' }}>
+              <Box
+                sx={{
+                  color: 'white',
+                  textTransform: 'uppercase',
+                  fontSize: 'large',
+                }}
+              >
+                <p>
+                  {text.portfolio}
+                  <br />
+                  <strong>{text.name}</strong>
+                </p>
+              </Box>
+              <Box>
+                <Typography variant={'h1'}>{text.title}</Typography>
+              </Box>
+              <Box
+                sx={{
+                  color: 'white',
+                  textTransform: 'uppercase',
+                  fontSize: 'large',
+                }}
+              >
+                <p>{text.more}</p>
+              </Box>
+            </Box>
+            <Box
               sx={{
-                bgcolor: '#66BFBF',
-                width: '150px',
-                height: '150px',
-                bottom: '-120px',
-                right: '20px',
-                border: '3px solid white',
+                display: 'flex',
+                justifyContent: 'end',
+                background: 'hotpink',
               }}
             >
-              <LogoutIcon />
-            </Avatar>
+              <Avatar
+                sx={{
+                  bgcolor: '#66BFBF',
+                  width: '150px',
+                  height: '150px',
+                  bottom: '-120px',
+                  right: '20px',
+                  border: '3px solid white',
+                }}
+              >
+                <LogoutIcon />
+              </Avatar>
+            </Box>
           </Box>
-        </Box>
+        ))}
       </Container>
-    </Container>
+    </Box>
   );
 };
 
