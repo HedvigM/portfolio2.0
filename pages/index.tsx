@@ -10,6 +10,7 @@ import { Thoughts } from './Thoughts';
 import { Skills } from './Skills';
 import { ForMore } from './ForMore';
 import { Contact } from './Contact';
+import { TypographyStyle } from './TypographyStyle';
 
 const IndexPage: NextPage<{}> = ({}) => {
   return (
