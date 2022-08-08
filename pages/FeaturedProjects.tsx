@@ -40,7 +40,12 @@ export const FeaturedProjects = () => {
               }}
             >
               <CardActionArea>
-                <CardMedia></CardMedia>
+                <CardMedia
+                  component='img'
+                  height='300'
+                  image={project.image}
+                  alt='green iguana'
+                ></CardMedia>
                 <CardContent>
                   <Typography variant='h3' component='div'>
                     {project.name}
@@ -67,20 +72,20 @@ export const FeaturedProjects = () => {
                       >
                         Deployed project
                       </H6Variant>
-                      <Typography
-                        variant='h6'
-                        sx={{ backgroundColor: 'secondary.main' }}
+                    </Typography>
+                    <Typography
+                      variant='h6'
+                      sx={{ backgroundColor: 'secondary.main' }}
+                    >
+                      <H6Variant
+                        aria-label='Link to the deployed project'
+                        aria-pressed='false'
+                        role='button'
+                        target='_blank'
+                        href={project.github}
                       >
-                        <H6Variant
-                          aria-label='Link to the deployed project'
-                          aria-pressed='false'
-                          role='button'
-                          target='_blank'
-                          href={project.github}
-                        >
-                          <FontAwesomeIcon icon={['fab', 'github']} />
-                        </H6Variant>
-                      </Typography>
+                        <FontAwesomeIcon icon={['fab', 'github']} />
+                      </H6Variant>
                     </Typography>
                   </Box>
                 </CardContent>
