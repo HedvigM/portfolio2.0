@@ -23,9 +23,19 @@ export const Skills = () => {
           {SkillsText.map((text, index) => (
             <Box key={index} sx={{ paddingBottom: '50px' }}>
               <Heading>{text.name}</Heading>
-              {text.list.map((list, index) => (
-                <Typography variant='body1'>{list}</Typography>
-              ))}
+              {text.list.map((list, index) =>
+                list.startsWith('*') ? (
+                  <Typography
+                    variant='body1'
+                    color='secondary.main'
+                    sx={{ textTransform: 'uppercase' }}
+                  >
+                    {list.replace('*', '')}
+                  </Typography>
+                ) : (
+                  <Typography variant='body1'>{list}</Typography>
+                )
+              )}
             </Box>
           ))}
         </Box>
