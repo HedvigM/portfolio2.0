@@ -72,7 +72,6 @@ export const theme = createTheme({
       fontFamily: 'Roboto',
       textAlign: 'left',
       lineHeight: '1.7',
-      marginTop: '5px',
       textDecoration: 'none',
     },
     body2: {
