@@ -40,17 +40,29 @@ export const FeaturedProjects = () => {
               }}
             >
               <CardActionArea>
-                <CardMedia
-                  component='img'
-                  height='300'
-                  image={project.image}
-                  alt='green iguana'
-                ></CardMedia>
+                <Box sx={{ position: 'relative' }}>
+                  <Overlay>
+                    <p>{project.name}</p>
+                  </Overlay>
+                  <ImgOverlay>
+                    <CardMedia
+                      component='img'
+                      height='250'
+                      image={project.image}
+                      alt={project.alt}
+                    ></CardMedia>
+                  </ImgOverlay>
+                </Box>
                 <CardContent>
                   <Typography variant='h3' component='div'>
                     {project.name}
                   </Typography>
-                  <Typography variant='body2' color='text.secondary'>
+                  <Typography
+                    variant='body2'
+                    color='text.secondary'
+                    paragraph
+                    align='left'
+                  >
                     {project.discription}
                   </Typography>
                   <Box sx={{ marginTop: '15px' }}>
@@ -98,48 +110,48 @@ export const FeaturedProjects = () => {
   );
 };
 
-const ImageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  position: relative;
-`;
-
-const ImageText = styled.h3`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const Overlay = styled.div`
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  /* background-color: #86cb91; */
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.2s ease;
+
   :hover {
+    background-color: transparent;
     display: none;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
+  }
+
+  p {
+    position: absolute;
+    font-weight: 200;
+    color: white;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+
+    :hover {
+      color: transparent;
+      display: none;
+    }
   }
 `;
 
-const Image = styled.div`
-  /* background-color: #ff0063; */
-  background-color: pink;
-  width: 200px;
-  /*   width: 400px; */
-  height: 200px;
-  /* height: 400px; */
-  display: block;
+const ImgOverlay = styled.div`
+  transition: 0.3s ease;
 
   :hover {
-    background-color: turquoise;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
+    transform: scale(1.1);
   }
 `;
 
