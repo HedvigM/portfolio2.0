@@ -27,7 +27,7 @@ export const Skills = () => {
                 list.startsWith('*') ? (
                   <Typography
                     variant='body1'
-                    color='secondary.main'
+                    color='primary.main'
                     sx={{ textTransform: 'uppercase' }}
                   >
                     {list.replace('*', '')}
