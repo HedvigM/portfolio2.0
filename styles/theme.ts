@@ -1,3 +1,4 @@
+
 import { createTheme } from '@mui/material';
 
 export const theme = createTheme({
@@ -65,7 +66,8 @@ export const theme = createTheme({
       textAlign: 'center',
       display: 'inline',
       fontFamily: 'Roboto',
-      margin: '2px'
+      margin: '2px',
+      borderRadius: '2px',
     },
     body1: {
       fontSize: '1rem',
