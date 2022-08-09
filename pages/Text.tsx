@@ -43,6 +43,15 @@ export const PresentationText = [
 
 export const projects = [
   {
+    image: '',
+    alt: 'The voyd web page',
+    name: 'VOYD',
+    discription: `As a developer at VOYD, I developed the website's home page with supervision. In working with this, I have refined my knowledge in TypeScript, Next.js, Vanilla Extract and Git. I am part of a development team where we work according to the agile working method with standups, retros and sprints.`,
+    tags: ['React', 'TypeScript', 'Vanilla Extract', 'JavaScript', 'node.js'],
+    deployed: 'https://tunesandfriends.netlify.app/login',
+    github: 'https://github.com/HedvigM/my-final-project',
+  },
+  {
     image: '/./Pictures/irish.png',
     alt: 'mountain',
     name: 'Tunes & Friends',
@@ -219,6 +228,21 @@ export const SkillsText = [
     ],
   },
 ];
+/* 
+CODE
+HTML
+CSS
+JavaScript
+API's
+React */
+
+/* toolbox - VSCode
+CodePen
+GitHub
+Figma
+Notion
+Trello
+Miro */
 
 export const ForMoreText = [
   {
