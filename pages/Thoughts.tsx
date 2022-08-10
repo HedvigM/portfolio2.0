@@ -23,6 +23,7 @@ export const Thoughts = () => {
               flexDirection: 'row',
               justifyContent: 'space-between',
               marginTop: '30px',
+              minHeight: '200px',
             }}
           >
             <CardMedia
