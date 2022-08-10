@@ -5,7 +5,7 @@ import { PresentationText } from './Text';
 export const Presentation = () => {
   return (
     <Box sx={{ background: '#EAF6F6' }}>
-      <Container maxWidth='md' sx={{ padding: '50px' }}>
+      <Container maxWidth='sm' sx={{ padding: '50px' }}>
         {PresentationText.map((text, index) => (
           <Typography variant='body1'>
             <Box
