@@ -65,40 +65,55 @@ export const FeaturedProjects = () => {
                   >
                     {project.discription}
                   </Typography>
-                  <Box sx={{ marginTop: '15px' }}>
+                  <Box
+                    sx={{
+                      marginTop: '15px',
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                    }}
+                  >
                     {project.tags.map((tag, index) => (
-                      <Typography key={index} variant='h6'>
-                        {tag}
-                      </Typography>
+                      <Box>
+                        <Typography key={index} variant='h6'>
+                          {tag}
+                        </Typography>
+                      </Box>
                     ))}
-                    <Typography
-                      variant='h6'
-                      sx={{ backgroundColor: 'secondary.main', color: 'white' }}
-                    >
-                      <H6Variant
-                        aria-label='Link to the deployed project'
-                        aria-pressed='false'
-                        role='button'
-                        target='_blank'
-                        href={project.deployed}
+                    <Box>
+                      <Typography
+                        variant='h6'
+                        sx={{
+                          backgroundColor: 'secondary.main',
+                          color: 'white',
+                        }}
                       >
-                        Deployed project
-                      </H6Variant>
-                    </Typography>
-                    <Typography
-                      variant='h6'
-                      sx={{ backgroundColor: 'secondary.main' }}
-                    >
-                      <H6Variant
-                        aria-label='Link to the deployed project'
-                        aria-pressed='false'
-                        role='button'
-                        target='_blank'
-                        href={project.github}
+                        <H6Variant
+                          aria-label='Link to the deployed project'
+                          aria-pressed='false'
+                          role='button'
+                          target='_blank'
+                          href={project.deployed}
+                        >
+                          Deployed project
+                        </H6Variant>
+                      </Typography>
+                    </Box>
+                    <Box>
+                      <Typography
+                        variant='h6'
+                        sx={{ backgroundColor: 'secondary.main' }}
                       >
-                        <FontAwesomeIcon icon={['fab', 'github']} />
-                      </H6Variant>
-                    </Typography>
+                        <H6Variant
+                          aria-label='Link to the deployed project'
+                          aria-pressed='false'
+                          role='button'
+                          target='_blank'
+                          href={project.github}
+                        >
+                          <FontAwesomeIcon icon={['fab', 'github']} />
+                        </H6Variant>
+                      </Typography>
+                    </Box>
                   </Box>
                 </CardContent>
               </CardActionArea>

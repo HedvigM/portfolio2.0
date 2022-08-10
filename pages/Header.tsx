@@ -20,25 +20,27 @@ export const Header = () => {
   return (
     <BGImage>
       <Container maxWidth='md'>
-        <FormGroup>
-          <FormControlLabel
-            control={<Switch defaultChecked color='primary' />}
-            label='Dark or light mode'
-          />
-        </FormGroup>
-        <Icons>
-          {HeaderIconText.map((text, index) => (
-            <Icon
-              key={index}
-              href={text.href}
-              target='_blank'
-              rel='noreferrer noopener'
-              aria-label={text.ariaLabel}
-            >
-              <FontAwesomeIcon icon={[text.iconImage1, text.iconImage2]} />
-            </Icon>
-          ))}
-        </Icons>
+        <Box sx={{ display: 'flex' }}>
+          <FormGroup sx={{ display: 'flex', justifyContent: 'center' }}>
+            <FormControlLabel
+              control={<Switch defaultChecked color='primary' />}
+              label='Dark or light mode'
+            />
+          </FormGroup>
+          <Icons>
+            {HeaderIconText.map((text, index) => (
+              <Icon
+                key={index}
+                href={text.href}
+                target='_blank'
+                rel='noreferrer noopener'
+                aria-label={text.ariaLabel}
+              >
+                <FontAwesomeIcon icon={[text.iconImage1, text.iconImage2]} />
+              </Icon>
+            ))}
+          </Icons>
+        </Box>
         {HeaderText.map((text, index) => (
           <Box
             sx={{
@@ -46,7 +48,14 @@ export const Header = () => {
               justifyContent: 'space-between',
             }}
           >
-            <Box key={index} sx={{ maxWidth: '200px' }}>
+            <Box
+              key={index}
+              /* mediaquery? 15% wide, and 5% mobile */
+              sx={{
+                maxWidth: '200px',
+                marginLeft: '5%',
+              }}
+            >
               <Box
                 sx={{
                   color: 'white',
