@@ -17,6 +17,7 @@ export const Skills = () => {
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'center',
+            textAlign: 'center',
             gap: '30px',
           }}
         >
@@ -28,12 +29,15 @@ export const Skills = () => {
                   <Typography
                     variant='body1'
                     color='primary.main'
+                    textAlign='center'
                     sx={{ textTransform: 'uppercase' }}
                   >
                     {list.replace('*', '')}
                   </Typography>
                 ) : (
-                  <Typography variant='body1'>{list}</Typography>
+                  <Typography variant='body1' textAlign='center'>
+                    {list}
+                  </Typography>
                 )
               )}
             </Box>
