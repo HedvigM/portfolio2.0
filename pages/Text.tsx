@@ -43,7 +43,7 @@ export const PresentationText = [
 
 export const projects = [
   {
-    image: '',
+    image: '/./Pictures/voyd.png',
     alt: 'The voyd web page',
     name: 'VOYD',
     discription: `As a developer at VOYD, I developed the website's home page with supervision. In working with this, I have refined my knowledge in TypeScript, Next.js, Vanilla Extract and Git. I am part of a development team where we work according to the agile working method with standups, retros and sprints.`,
@@ -87,7 +87,7 @@ export const projects = [
     deployed: 'https://hedvigs-labyrinth.netlify.app/',
     github: 'https://github.com/HedvigM/project-labyrinth',
   },
-  {
+  /*   {
     image: '/./Pictures/todo.png',
     alt: 'todo',
     name: 'Todo app',
@@ -96,9 +96,9 @@ export const projects = [
     tags: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Styled components'],
     deployed: 'https://hedvigs-todo.netlify.app/',
     github: 'https://github.com/HedvigM/project-todos',
-  },
+  }, */
   {
-    image: '/./Pictures/happy-thoughts.png',
+    image: '/./Pictures/happy.png',
     alt: 'Happy thoughts',
     name: 'Happy thoughts',
     discription:
@@ -154,12 +154,13 @@ export const ThoughtsText = [
     alt: 'picture of happy man holding up an postit',
     date: 'JUL 2022',
     name: 'Why I love to code',
-    text: 'One thing that you quickly become aware of when learning to code is that there are a variety of parentheses. How to use these do not always feel as obvious, so I thought I would make a small guide on how to think about the use of these.',
+    text: 'When I’m at work, I often find myself thinking — I get to work with this, I get to have this much fun and I even get paid for it!',
     href: 'https://medium.com/@hedvig.mejstedt/why-i-love-to-code-db6fe946e1e9',
     more: 'Read more',
   },
   {
     image: '/./Pictures/pexels-pic.jpg',
+    alt: 'a picture of a person sitting with the computer',
     date: 'Dec 2021',
     name: 'A small guide on how to use brackets while coding',
     text: 'One thing that you quickly become aware of when learning to code is that there are a variety of parentheses. How to use these do not always feel as obvious, so I thought I would make a small guide on how to think about the use of these.',
@@ -172,14 +173,14 @@ export const MoreThoughtsText = [
   {
     date: 'Mar 2022',
     name: 'Tunes & Friends',
-    text: 'One thing that you quickly become aware of when learning to code is that there are a variety of parentheses. How to use these do not always feel as obvious, so I thought I would make a small guide on how to think about the use of these.',
+    text: 'During my parental leave, I have managed to make a website I can be proud of, a page I hope I can develop further and develop together with. ',
     href: 'https://medium.com/@hedvig.mejstedt/tunes-friends-f54e995e64ef',
     more: 'Read more',
   },
   {
     date: 'Mar 2022',
     name: 'Finally, Monday!',
-    text: 'During my parental leave, I have managed to make a website I can be proud of, a page I hope I can develop further and develop together with.  ',
+    text: 'Half of the course has passed. Wow. It feels incredible that half of the time has passed and that I’ve enjoyed and cherished every second. It is amazing to be able to say that I’m longing for Mondays, and mean it! But am I now a pro that always knows how to solve the problem and never does anything wrong? No.',
     href: 'https://medium.com/@hedvig.mejstedt/finally-monday-889fe0399a0f',
     more: 'Read more',
   },
