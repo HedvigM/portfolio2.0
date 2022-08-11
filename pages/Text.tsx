@@ -1,22 +1,25 @@
-export const HeaderIconText = [
+import {
+  faGithub,
+  faLinkedinIn,
+  faStackOverflow,
+} from '@fortawesome/free-brands-svg-icons';
+
+export const IconText = [
   {
-    icon: 'GitHub',
-    iconImage1: 'fab',
-    iconImage2: 'github',
+    iconName: 'GitHub',
+    icon: faGithub,
     href: 'https://github.com/HedvigM',
     ariaLabel: 'a link to my GitHub account',
   },
   {
-    icon: 'stack Overflow',
-    iconImage1: 'fab',
-    iconImage2: 'stack-overflow',
+    iconName: 'stack Overflow',
+    icon: faStackOverflow,
     href: 'https://stackoverflow.com/users/16650863/hedvig',
     ariaLabel: 'a link to my stack-overflow account',
   },
   {
-    icon: 'LinkedIn',
-    iconImage1: 'fab',
-    iconImage2: 'linkedin-in',
+    iconName: 'LinkedIn',
+    icon: faLinkedinIn,
     href: 'https://www.linkedin.com/in/hedvig-mejstedt',
     ariaLabel: 'a link to my stack-overflow account',
   },
@@ -244,30 +247,6 @@ Figma
 Notion
 Trello
 Miro */
-
-export const ForMoreText = [
-  {
-    icon: 'GitHub',
-    iconImage1: 'fab',
-    iconImage2: 'github',
-    href: 'https://github.com/HedvigM',
-    ariaLabel: 'a link to my GitHub account',
-  },
-  {
-    icon: 'stack Overflow',
-    iconImage1: 'fab',
-    iconImage2: 'stack-overflow',
-    href: 'https://stackoverflow.com/users/16650863/hedvig',
-    ariaLabel: 'a link to my stack-overflow account',
-  },
-  {
-    icon: 'LinkedIn',
-    iconImage1: 'fab',
-    iconImage2: 'linkedin-in',
-    href: 'https://www.linkedin.com/in/hedvig-mejstedt',
-    ariaLabel: 'a link to my stack-overflow account',
-  },
-];
 
 export const ContactText = [
   {
