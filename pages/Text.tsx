@@ -9,19 +9,19 @@ export const IconText = [
     iconName: 'GitHub',
     icon: faGithub,
     href: 'https://github.com/HedvigM',
-    ariaLabel: 'a link to my GitHub account',
+    ariaLabel: 'A link to my GitHub account',
   },
   {
     iconName: 'stack Overflow',
     icon: faStackOverflow,
     href: 'https://stackoverflow.com/users/16650863/hedvig',
-    ariaLabel: 'a link to my stack-overflow account',
+    ariaLabel: 'A link to my Stack Overflow account',
   },
   {
     iconName: 'LinkedIn',
     icon: faLinkedinIn,
     href: 'https://www.linkedin.com/in/hedvig-mejstedt',
-    ariaLabel: 'a link to my stack-overflow account',
+    ariaLabel: 'A link to my LinkedIn profile',
   },
 ];
 
@@ -30,17 +30,18 @@ export const HeaderText = [
     portfolio: 'portfolio:',
     name: 'Hedvig Mejstedt',
     title: 'frontend developer',
-    more: '+ some thing more',
+    more: '+ something more',
     image: '',
   },
 ];
 
+/* Rewrite this text. */
 export const PresentationText = [
   {
     paragraphOne:
       'Hello! I am a frontend developer who is not afraid to venture into new situations in search of new knowledge or challenges',
     paragraphTwo: `I am a trained social worker that recently graduated from Technigo's 24 week bootcamp where I spent every day learning about web
-    technologies. I loved every second of it, and I'm looking forward to working as a frontend developer and being a part of the community and the forward movement.`,
+    technologies. I loved every second of it, and I'm looking forward to working as a frontend developer and being a part of the coding community.`,
   },
 ];
 
@@ -49,20 +50,27 @@ export const projects = [
     image: '/./Pictures/voyd.png',
     alt: 'The voyd web page',
     name: 'VOYD',
-    discription: `As a developer at VOYD, I developed the website's home page with supervision. In working with this, I have refined my knowledge in TypeScript, Next.js, Vanilla Extract and Git. I am part of a development team where we work according to the agile working method with standups, retros and sprints.`,
-    tags: ['React', 'TypeScript', 'Vanilla Extract', 'JavaScript', 'node.js'],
-    deployed: 'https://tunesandfriends.netlify.app/login',
+    discription: `As a developer at VOYD, I developed the front page of the company's website. I gained experience and refined my knowledge of TypeScript, Next.js, Git and other technologies. I was part of a development where we worked according to the agile working method with standups, retros and sprints.`,
+
+    tags: [
+      'React',
+      'TypeScript',
+      'Next.js',
+      'Vanilla Extract',
+      'JavaScript',
+      'node.js',
+    ],
+    deployed: 'https://voyd.tv/en-US',
     github: 'https://github.com/HedvigM/my-final-project',
   },
   {
     image: '/./Pictures/irish.png',
-    alt: 'mountain',
+    alt: 'The tunes & friends web page',
     name: 'Tunes & Friends',
     discription:
-      'This is my final project on the Technigo Bootcamp. I have had this idea for a long time, and i was finally ready to build it! Sign up and mark the tunes you know or want to learn. Find your friends amongst the members and se what tunes you have in common. You can also se the sheet music for all the tunes. The music data comes from the great database The session.',
+      'Tunes & Friends was my final project at the Technigo bootcamp. I had been thinking about the concept for a long time, and I was finally ready to build it! Sign up to browse Irish folk tunes, tag tunes you know or want to learn, and find your friends to see what tunes you have in common. You can also see sheet music for tunes. Music data is provided by The Session (länk).',
     tags: [
       'React',
-      'JSX',
       'Styled components',
       'Redux',
       'JavaScript',
@@ -76,10 +84,10 @@ export const projects = [
   },
   {
     image: '/./Pictures/labyrinth.png',
-    alt: 'labyrinth project',
+    alt: 'labyrinth',
     name: 'Labyrinth',
     discription:
-      'The Labyrinth app is a text based game where the player choose where to go until they have made it out of the labyrinth.',
+      'The Labyrinth app is a text based game where the player chooses where to go until they have made it out of the labyrinth.',
     tags: [
       'JavaScript',
       'React',
@@ -103,17 +111,10 @@ export const projects = [
   {
     image: '/./Pictures/happy.png',
     alt: 'Happy thoughts',
-    name: 'Happy thoughts',
+    name: 'Happy Thoughts',
     discription:
-      'The Happy Thoughts is a twitter like web app that show the twenty last posts made to the Technigo Happy Thoughts API. There is an input field where you can write your happy thoughts and there is also a heart where you can "like" the posted messages.',
-    tags: [
-      'React',
-      'CSS',
-      'Components',
-      'UseEffect',
-      'API and POST requests',
-      'JSX',
-    ],
+      'Happy Thoughts is a twitter like web app that show the twenty last posts made to an API I made for ths project. It is a simple micro blog where you can write your happy thoughts and "heart" earlier posts.',
+    tags: ['React', 'CSS', 'API', 'JSX'],
     deployed: 'https://hedvigs-happy-thoughts.netlify.app/',
     github: 'https://github.com/HedvigM/project-happy-thoughts',
   },
@@ -121,17 +122,9 @@ export const projects = [
 
 export const OtherProjectsText = [
   {
-    name: 'Hedvigs party',
-    description:
-      'Hedvigs Party is a sign up form built with React. There is a series of questions with different inputs, buttons, radio buttons, checkboxes etc and there is also a last page that sums up the answers from the form',
-    tags: [
-      'React',
-      'JSX',
-      'Styled Components',
-      'CSS-variables',
-      'State',
-      'Form',
-    ],
+    name: `Hedvig's party`,
+    description: `Hedvig's Party is a sign up form built with React. There is a series of questions with different inputs, buttons, radio buttons, checkboxes, etc. There is also a last page that sums up the answers from the form.`,
+    tags: ['React', 'JSX', 'Styled Components', 'CSS-variables', 'State'],
     deployed: 'https://hedvigs-party.netlify.app/',
     github: 'https://github.com/HedvigM/project-survey',
     ariaLabel: 'Link to the deployed project',
@@ -140,9 +133,8 @@ export const OtherProjectsText = [
   },
   {
     name: 'Harry Potter quiz',
-    description:
-      'This project is a Harry Potter themed quiz using Redux and the global state. There are a bunch questions with different input styles, like button, pitcure and radiobuttons. On the last page there are a sum page that showthe players answers and the right answers.',
-    tags: ['React', 'JSX', 'mob programming', 'Styled components'],
+    description: `This project is a Harry Potter themed quiz using Redux and the global state. There are a bunch questions with different input styles, like button, picture and radiobuttons. On the last page there is a sum page that show the player's answers and the correct answers.`,
+    tags: ['React', 'JSX', 'Styled components'],
     deployed: 'https://reduxquizliongroup1.netlify.app/',
     github: 'https://github.com/Zancotti/project-redux-quiz',
     ariaLabel: 'Link to the deployed project',
@@ -154,7 +146,7 @@ export const OtherProjectsText = [
 export const ThoughtsText = [
   {
     image: '/./Pictures/code.jpg',
-    alt: 'picture of happy man holding up an postit',
+    alt: 'picture of happy man holding up an post-it',
     date: 'JUL 2022',
     name: 'Why I love to code',
     text: 'When I’m at work, I often find myself thinking — I get to work with this, I get to have this much fun and I even get paid for it!',
@@ -195,13 +187,13 @@ export const SkillsText = [
     list: [
       '*JavaScript',
       'Redux',
-      'NEXT.JS',
-      '*react',
+      'Next.js',
+      '*React',
       'Node.js',
       'CSS3',
       'Styled Components',
       'Vanilla Extract',
-      '*typeScript',
+      '*TypeScript',
       'HTML5',
       'JSX',
       'mongoose',
@@ -210,43 +202,33 @@ export const SkillsText = [
   {
     name: 'toolbox',
     list: [
-      '*github',
+      '*Github',
       'VSCode',
       'Mongo DB',
       'Adobe Photoshop',
       '*Figma',
       'Slack',
-      'jira',
+      'Jira',
       'Confluence',
-      'postman',
+      'Postman',
+      'git',
+      'CodePen',
+      'Notion',
+      'Trello',
+      'Miro',
     ],
   },
   {
     name: 'more',
     list: [
       'Office package',
-      'pair-programming',
+      'Pair programming',
       '*Agile methodology',
-      'Mob-programming',
-      '*Web Accessibility',
+      'Mob programming',
+      '*Web accessibility',
     ],
   },
 ];
-/* 
-CODE
-HTML
-CSS
-JavaScript
-API's
-React */
-
-/* toolbox - VSCode
-CodePen
-GitHub
-Figma
-Notion
-Trello
-Miro */
 
 export const ContactText = [
   {
