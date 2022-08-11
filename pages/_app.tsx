@@ -5,14 +5,14 @@ import { ThemeProvider, CssBaseline } from '@mui/material';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 
-import { theme } from 'styles/theme';
+import { theme, darkTheme } from 'styles/theme';
 
 const clientSideEmotionCache = createCache({ key: 'css', prepend: true });
 
 function MyApp({
   Component,
   emotionCache = clientSideEmotionCache,
-  pageProps
+  pageProps,
 }) {
   const router = useRouter();
 
@@ -20,11 +20,11 @@ function MyApp({
     <CacheProvider value={emotionCache}>
       <Head>
         <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
+          name='viewport'
+          content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no'
         />
       </Head>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <Component {...pageProps} key={router.asPath} />
       </ThemeProvider>

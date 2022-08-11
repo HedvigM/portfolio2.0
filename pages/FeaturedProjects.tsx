@@ -13,7 +13,7 @@ import { projects } from './Text';
 
 export const FeaturedProjects = () => {
   return (
-    <Box sx={{ marginBottom: '50px' }}>
+    <Box sx={{ backgroundColor: 'primary.dark', paddingBottom: '50px' }}>
       <Container maxWidth='md'>
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}

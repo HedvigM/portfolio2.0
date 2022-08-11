@@ -6,7 +6,7 @@ import { IconText } from './Text';
 
 export const ForMore = () => {
   return (
-    <Box sx={{ background: 'white' }}>
+    <Box sx={{ backgroundColor: 'secondary.main' }}>
       <Container maxWidth='md'>
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}

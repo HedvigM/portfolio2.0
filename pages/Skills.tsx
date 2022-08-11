@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 
 export const Skills = () => {
   return (
-    <Box sx={{ background: '#EAF6F6' }}>
+    <Box sx={{ backgroundColor: 'primary.main' }}>
       <Container maxWidth='md'>
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}

@@ -4,10 +4,11 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { OtherProjectsText } from './Text';
 import { grey } from '@mui/material/colors';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export const OtherProjects = () => {
   return (
-    <Box sx={{ background: '#EAF6F6' }}>
+    <Box sx={{ backgroundColor: 'primary.main' }}>
       <Container maxWidth='md'>
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
@@ -51,7 +52,7 @@ export const OtherProjects = () => {
                   target='_blank'
                   href={text.github}
                 >
-                  <FontAwesomeIcon icon={[text.iconImage1, text.iconImage2]} />
+                  <FontAwesomeIcon icon={faGithub} />
                 </H6Variant>
               </Typography>
             </Box>

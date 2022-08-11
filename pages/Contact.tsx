@@ -5,7 +5,7 @@ import { ContactText } from './Text';
 
 export const Contact = () => {
   return (
-    <Box sx={{ background: '#66bfbf' }}>
+    <Box sx={{ backgroundColor: 'primary.contrastText' }}>
       <Container maxWidth='md'>
         <Box
           sx={{

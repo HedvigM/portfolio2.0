@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 /* Link to the thoughts */
 export const Thoughts = () => {
   return (
-    <Box sx={{ background: 'white', marginBottom: '50px' }}>
+    <Box sx={{ backgroundColor: 'primary.dark', paddingBottom: '50px' }}>
       <Container maxWidth='md'>
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
