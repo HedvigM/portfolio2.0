@@ -9,8 +9,7 @@ export const theme = createTheme({
     },
    secondary: {
      main: '#FF0063'
-   }
-
+   },
   },
   typography: {
     fontFamily: [
@@ -23,7 +22,7 @@ export const theme = createTheme({
       fontWeight: 700,
       fontFamily: 'Roboto',
       textTransform: 'uppercase',
-      color: '#66BFBF',
+     /*  color: '#66BFBF', */
     },
     h2: {
       fontSize: '1.5rem',
