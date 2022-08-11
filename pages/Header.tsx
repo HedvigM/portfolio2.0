@@ -11,8 +11,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
-import { HeaderIconText, HeaderText } from './Text';
+import {
+  fab,
+  faGithub,
+  faLinkedinIn,
+  faStackOverflow,
+} from '@fortawesome/free-brands-svg-icons';
+import { HeaderText, IconText } from './Text';
 import ProfilePic from '../pages/Images';
 
 export const Header = () => {
@@ -28,7 +33,7 @@ export const Header = () => {
             />
           </FormGroup>
           <Icons>
-            {HeaderIconText.map((text, index) => (
+            {IconText.map((text, index) => (
               <Icon
                 key={index}
                 href={text.href}
@@ -36,7 +41,7 @@ export const Header = () => {
                 rel='noreferrer noopener'
                 aria-label={text.ariaLabel}
               >
-                <FontAwesomeIcon icon={[text.iconImage1, text.iconImage2]} />
+                <FontAwesomeIcon icon={text.icon} />
               </Icon>
             ))}
           </Icons>
@@ -45,15 +50,13 @@ export const Header = () => {
           <Box
             sx={{
               display: 'flex',
-              justifyContent: 'space-between',
+              justifyContent: 'space-around',
             }}
           >
             <Box
               key={index}
-              /* mediaquery? 15% wide, and 5% mobile */
               sx={{
                 maxWidth: '200px',
-                marginLeft: '5%',
               }}
             >
               <Box
@@ -70,7 +73,9 @@ export const Header = () => {
                 </p>
               </Box>
               <Box>
-                <Typography variant={'h1'}>{text.title}</Typography>
+                <Typography variant={'h1'} color='primary.main'>
+                  {text.title}
+                </Typography>
               </Box>
               <Box
                 sx={{
@@ -90,11 +95,9 @@ export const Header = () => {
             >
               <Avatar
                 sx={{
-                  bgcolor: '#66BFBF',
                   width: '150px',
                   height: '150px',
                   bottom: '-120px',
-                  right: '20px',
                   border: '3px solid white',
                 }}
               >
