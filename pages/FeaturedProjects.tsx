@@ -1,7 +1,6 @@
 import {
   Box,
   Card,
-  CardActionArea,
   CardContent,
   CardMedia,
   Container,
@@ -39,84 +38,97 @@ export const FeaturedProjects = () => {
                 margin: '10px',
               }}
             >
-              <CardActionArea>
-                <Box sx={{ position: 'relative' }}>
-                  <Overlay>
-                    <p>{project.name}</p>
-                  </Overlay>
-                  <ImgOverlay>
-                    <CardMedia
-                      component='img'
-                      height='250'
-                      image={project.image}
-                      alt={project.alt}
-                    ></CardMedia>
-                  </ImgOverlay>
-                </Box>
-                <CardContent>
-                  <Typography variant='h3' component='div'>
-                    {project.name}
-                  </Typography>
-                  <Typography
-                    variant='body2'
-                    color='text.secondary'
-                    paragraph
-                    align='left'
-                  >
-                    {project.discription}
-                  </Typography>
-                  <Box
-                    sx={{
-                      marginTop: '15px',
-                      display: 'flex',
-                      flexWrap: 'wrap',
-                    }}
-                  >
-                    {project.tags.map((tag, index) => (
-                      <Box>
-                        <Typography key={index} variant='h6'>
-                          {tag}
-                        </Typography>
-                      </Box>
-                    ))}
+              <Box
+                sx={{
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+              >
+                <Overlay>
+                  <p>{project.name}</p>
+                </Overlay>
+                <CardMedia
+                  sx={[
+                    {
+                      /*  filter: 'brightness(70%)', */
+                      transition: '0.3s',
+
+                      '&:hover': {
+                        transition: '0.3s',
+                        transform: 'scale(1.1)',
+                        filter: 'brightness(100%)',
+                      },
+                    },
+                  ]}
+                  component='img'
+                  height='250'
+                  image={project.image}
+                  alt={project.alt}
+                ></CardMedia>
+              </Box>
+              <CardContent>
+                <Typography variant='h3' component='div'>
+                  {project.name}
+                </Typography>
+                <Typography
+                  variant='body2'
+                  color='text.secondary'
+                  paragraph
+                  align='left'
+                >
+                  {project.discription}
+                </Typography>
+                <Box
+                  sx={{
+                    marginTop: '15px',
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                  }}
+                >
+                  {project.tags.map((tag, index) => (
                     <Box>
-                      <Typography
-                        variant='h6'
-                        sx={{
-                          backgroundColor: 'secondary.main',
-                          color: 'white',
-                        }}
-                      >
-                        <H6Variant
-                          aria-label='Link to the deployed project'
-                          aria-pressed='false'
-                          role='button'
-                          target='_blank'
-                          href={project.deployed}
-                        >
-                          Deployed project
-                        </H6Variant>
+                      <Typography key={index} variant='h6'>
+                        {tag}
                       </Typography>
                     </Box>
-                    <Box>
-                      <Typography
-                        variant='h6'
-                        sx={{ backgroundColor: 'secondary.main' }}
+                  ))}
+                  <Box>
+                    <Typography
+                      variant='h6'
+                      sx={{
+                        backgroundColor: 'secondary.main',
+                        color: 'white',
+                      }}
+                    >
+                      <H6Variant
+                        aria-label='Link to the deployed project'
+                        aria-pressed='false'
+                        role='button'
+                        target='_blank'
+                        href={project.deployed}
                       >
-                        <H6Variant
-                          aria-label='Link to the deployed project'
-                          aria-pressed='false'
-                          role='button'
-                          target='_blank'
-                          href={project.github}
-                        >
-                          <FontAwesomeIcon icon={['fab', 'github']} />
-                        </H6Variant>
-                      </Typography>
-                    </Box>
+                        Deployed project
+                      </H6Variant>
+                    </Typography>
                   </Box>
-                </CardContent>
-              </CardActionArea>
+                  <Box>
+                    <Typography
+                      variant='h6'
+                      sx={{ backgroundColor: 'secondary.main' }}
+                    >
+                      <H6Variant
+                        aria-label='Link to the deployed project'
+                        aria-pressed='false'
+                        role='button'
+                        target='_blank'
+                        href={project.github}
+                      >
+                        <FontAwesomeIcon icon={['fab', 'github']} />
+                      </H6Variant>
+                    </Typography>
+                  </Box>
+                </Box>
+              </CardContent>
             </Card>
           ))}
         </Box>
@@ -127,16 +139,16 @@ export const FeaturedProjects = () => {
 
 const Overlay = styled.div`
   position: absolute;
+  display: inline;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+  pointer-events: none;
   background: rgba(0, 0, 0, 0.5);
-  transition: 0.2s ease;
+  transition: '0.1s ease-in';
 
   :hover {
-    background-color: transparent;
-    display: none;
   }
 
   p {
@@ -153,20 +165,10 @@ const Overlay = styled.div`
     margin: 0;
     justify-content: center;
     align-items: center;
-    transition: 0.3s ease;
 
     :hover {
       color: transparent;
-      display: none;
     }
-  }
-`;
-
-const ImgOverlay = styled.div`
-  transition: 0.3s ease;
-
-  :hover {
-    transform: scale(1.1);
   }
 `;
 
