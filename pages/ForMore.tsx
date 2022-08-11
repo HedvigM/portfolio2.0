@@ -2,7 +2,7 @@ import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
 import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { ForMoreText } from './Text';
+import { IconText } from './Text';
 
 export const ForMore = () => {
   return (
@@ -14,7 +14,7 @@ export const ForMore = () => {
           <Typography variant='h2'>For more</Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
-          {ForMoreText.map((icon, index) => (
+          {IconText.map((icon, index) => (
             <Box
               key={index}
               sx={{
@@ -32,11 +32,11 @@ export const ForMore = () => {
                   rel='noreferrer noopener'
                   aria-label={icon.ariaLabel}
                 >
-                  <FontAwesomeIcon icon={[icon.iconImage1, icon.iconImage2]} />
+                  <FontAwesomeIcon icon={icon.icon} />
                 </Icon>
               </Icons>
               <Typography variant='h4' sx={{ color: 'black' }}>
-                {icon.icon}
+                {icon.iconName}
               </Typography>
             </Box>
           ))}
