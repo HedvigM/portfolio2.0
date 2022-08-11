@@ -51,7 +51,6 @@ export const FeaturedProjects = () => {
                   sx={[
                     {
                       /*  filter: 'brightness(70%)', */
-                      transition: '0.3s',
 
                       '&:hover': {
                         transition: '0.3s',
