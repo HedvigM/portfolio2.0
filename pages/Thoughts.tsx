@@ -65,27 +65,26 @@ export const Thoughts = () => {
                     &nbsp;&gt;&gt;
                   </Typography>
                 </Typography>
-                <Typography
-                  variant='h6'
-                  sx={{
-                    backgroundColor: 'secondary.contrastText',
-                    '&:hover': {
-                      border: '1px solid',
-                      color: 'primary.contrastText',
-                      backgroundColor: 'primary.main',
-                    },
-                  }}
+                <H6Variant
+                  aria-label='Link to the deployed project'
+                  aria-pressed='false'
+                  role='button'
+                  target='_blank'
+                  href={text.href}
                 >
-                  <H6Variant
-                    aria-label='Link to the deployed project'
-                    aria-pressed='false'
-                    role='button'
-                    target='_blank'
-                    href={text.href}
+                  <Typography
+                    variant='h6'
+                    sx={{
+                      backgroundColor: 'secondary.contrastText',
+                      '&:hover': {
+                        color: 'text.primary',
+                        backgroundColor: 'primary.main',
+                      },
+                    }}
                   >
                     {text.more}
-                  </H6Variant>
-                </Typography>
+                  </Typography>
+                </H6Variant>
               </Box>
             </CardMedia>
             <CardMedia
@@ -133,27 +132,26 @@ export const Thoughts = () => {
                   </Typography>
                 </Typography>
               </Box>
-              <Typography
-                variant='h6'
-                sx={{
-                  backgroundColor: 'secondary.contrastText',
-                  '&:hover': {
-                    border: '1px solid',
-                    color: 'primary.contrastText',
-                    backgroundColor: 'primary.main',
-                  },
-                }}
+              <H6Variant
+                aria-label='Link to the deployed project'
+                aria-pressed='false'
+                role='button'
+                target='_blank'
+                href={text.href}
               >
-                <H6Variant
-                  aria-label='Link to the deployed project'
-                  aria-pressed='false'
-                  role='button'
-                  target='_blank'
-                  href={text.href}
+                <Typography
+                  variant='h6'
+                  sx={{
+                    backgroundColor: 'secondary.contrastText',
+                    '&:hover': {
+                      color: 'text.primary',
+                      backgroundColor: 'primary.main',
+                    },
+                  }}
                 >
                   {text.more}
-                </H6Variant>
-              </Typography>
+                </Typography>
+              </H6Variant>
             </Box>
           ))}
         </Container>

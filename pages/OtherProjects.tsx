@@ -42,48 +42,46 @@ export const OtherProjects = () => {
                   {tag}
                 </Typography>
               ))}
-              <Typography
-                variant='h6'
-                sx={{
-                  backgroundColor: 'secondary.contrastText',
-                  '&:hover': {
-                    border: '1px solid',
-                    color: 'primary.contrastText',
-                    backgroundColor: 'primary.main',
-                  },
-                }}
+              <H6Variant
+                aria-label={text.ariaLabel}
+                aria-pressed='false'
+                role='button'
+                target='_blank'
+                href={text.deployed}
               >
-                <H6Variant
-                  aria-label={text.ariaLabel}
-                  aria-pressed='false'
-                  role='button'
-                  target='_blank'
-                  href={text.deployed}
+                <Typography
+                  variant='h6'
+                  sx={{
+                    backgroundColor: 'secondary.contrastText',
+                    '&:hover': {
+                      color: 'text.primary',
+                      backgroundColor: 'primary.main',
+                    },
+                  }}
                 >
                   Deployed project
-                </H6Variant>
-              </Typography>
-              <Typography
-                variant='h6'
-                sx={{
-                  backgroundColor: 'secondary.contrastText',
-                  '&:hover': {
-                    border: '1px solid',
-                    color: 'primary.contrastText',
-                    backgroundColor: 'primary.main',
-                  },
-                }}
+                </Typography>
+              </H6Variant>
+              <H6Variant
+                aria-label={text.ariaLabel}
+                aria-pressed='false'
+                role='button'
+                target='_blank'
+                href={text.github}
               >
-                <H6Variant
-                  aria-label={text.ariaLabel}
-                  aria-pressed='false'
-                  role='button'
-                  target='_blank'
-                  href={text.github}
+                <Typography
+                  variant='h6'
+                  sx={{
+                    backgroundColor: 'secondary.contrastText',
+                    '&:hover': {
+                      color: 'text.primary',
+                      backgroundColor: 'primary.main',
+                    },
+                  }}
                 >
                   <FontAwesomeIcon icon={faGithub} />
-                </H6Variant>
-              </Typography>
+                </Typography>
+              </H6Variant>
             </Box>
           </Box>
         ))}

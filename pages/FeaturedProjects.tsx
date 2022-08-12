@@ -106,50 +106,48 @@ export const FeaturedProjects = () => {
                     </Box>
                   ))}
                   <Box>
-                    <Typography
-                      variant='h6'
-                      sx={{
-                        backgroundColor: 'secondary.contrastText',
-                        '&:hover': {
-                          border: '1px solid',
-                          color: 'primary.contrastText',
-                          backgroundColor: 'primary.main',
-                        },
-                      }}
+                    <H6Variant
+                      aria-label='Link to the deployed project'
+                      aria-pressed='false'
+                      role='button'
+                      target='_blank'
+                      href={project.deployed}
                     >
-                      <H6Variant
-                        aria-label='Link to the deployed project'
-                        aria-pressed='false'
-                        role='button'
-                        target='_blank'
-                        href={project.deployed}
+                      <Typography
+                        variant='h6'
+                        sx={{
+                          backgroundColor: 'secondary.contrastText',
+                          '&:hover': {
+                            color: 'text.primary',
+                            backgroundColor: 'primary.main',
+                          },
+                        }}
                       >
                         Deployed project
-                      </H6Variant>
-                    </Typography>
+                      </Typography>
+                    </H6Variant>
                   </Box>
                   <Box>
-                    <Typography
-                      variant='h6'
-                      sx={{
-                        backgroundColor: 'secondary.contrastText',
-                        '&:hover': {
-                          border: '1px solid',
-                          color: 'primary.contrastText',
-                          backgroundColor: 'primary.main',
-                        },
-                      }}
+                    <H6Variant
+                      aria-label='Link to the deployed project'
+                      aria-pressed='false'
+                      role='button'
+                      target='_blank'
+                      href={project.github}
                     >
-                      <H6Variant
-                        aria-label='Link to the deployed project'
-                        aria-pressed='false'
-                        role='button'
-                        target='_blank'
-                        href={project.github}
+                      <Typography
+                        variant='h6'
+                        sx={{
+                          backgroundColor: 'secondary.contrastText',
+                          '&:hover': {
+                            color: 'text.primary',
+                            backgroundColor: 'primary.main',
+                          },
+                        }}
                       >
                         <FontAwesomeIcon icon={['fab', 'github']} />
-                      </H6Variant>
-                    </Typography>
+                      </Typography>
+                    </H6Variant>
                   </Box>
                 </Box>
               </CardContent>
