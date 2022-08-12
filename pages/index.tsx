@@ -1,7 +1,6 @@
 import React from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { Container } from '@mui/material';
 import { Header } from './Header';
 import { Presentation } from './Presentation';
 import { FeaturedProjects } from './FeaturedProjects';
@@ -10,7 +9,6 @@ import { Thoughts } from './Thoughts';
 import { Skills } from './Skills';
 import { ForMore } from './ForMore';
 import { Contact } from './Contact';
-import { TypographyStyle } from './TypographyStyle';
 
 const IndexPage: NextPage<{}> = ({}) => {
   return (
