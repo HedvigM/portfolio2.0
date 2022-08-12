@@ -10,7 +10,15 @@ export const Skills = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <Typography variant='h2'>Skills</Typography>
+          <Typography
+            variant='h2'
+            sx={{
+              backgroundColor: 'primary.contrastText',
+              color: 'text.primary',
+            }}
+          >
+            Skills
+          </Typography>
         </Box>
         <Box
           sx={{
@@ -28,14 +36,18 @@ export const Skills = () => {
                 list.startsWith('*') ? (
                   <Typography
                     variant='body1'
-                    color='primary.main'
+                    color='primary.contrastText'
                     textAlign='center'
                     sx={{ textTransform: 'uppercase' }}
                   >
                     {list.replace('*', '')}
                   </Typography>
                 ) : (
-                  <Typography variant='body1' textAlign='center'>
+                  <Typography
+                    variant='body1'
+                    color='text.primary'
+                    textAlign='center'
+                  >
                     {list}
                   </Typography>
                 )
@@ -49,11 +61,11 @@ export const Skills = () => {
 };
 
 /* Is also used in more thoughts and contact */
-const Heading = styled.p`
-  font-size: 1.7rem;
-  font-weight: 700;
-  font-family: Roboto;
-  text-transform: uppercase;
-  color: #66bfbf;
-  margin: 0;
-`;
+const Heading = styled('p')((props) => ({
+  fontSize: '1.7rem',
+  fontWeight: '700',
+  fontFamily: 'Roboto',
+  textTransform: 'uppercase',
+  color: props.theme.palette.primary.contrastText,
+  margin: '0',
+}));

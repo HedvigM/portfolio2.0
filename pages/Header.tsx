@@ -19,6 +19,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { HeaderText, IconText } from './Text';
 import ProfilePic from '../pages/Images';
+import ToggleTheme from './ToggleTheme';
 
 export const Header = () => {
   library.add(fab);
@@ -26,12 +27,6 @@ export const Header = () => {
     <BGImage>
       <Container maxWidth='md'>
         <Box sx={{ display: 'flex' }}>
-          <FormGroup sx={{ display: 'flex', justifyContent: 'center' }}>
-            <FormControlLabel
-              control={<Switch defaultChecked color='primary' />}
-              label='Dark or light mode'
-            />
-          </FormGroup>
           <Icons>
             {IconText.map((text, index) => (
               <Icon
@@ -73,7 +68,7 @@ export const Header = () => {
                 </p>
               </Box>
               <Box>
-                <Typography variant={'h1'} color='primary.main'>
+                <Typography variant={'h1'} color='primary.contrastText'>
                   {text.title}
                 </Typography>
               </Box>
@@ -126,26 +121,28 @@ const Icons = styled.div`
   font-size: xx-large;
   padding: 10px;
 `;
-const Icon = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ff0063;
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  margin: 10px;
-  font-size: xx-large;
-  color: #ff0063;
-  cursor: pointer;
-  -webkit-transition-duration: 0.3s;
+
+const Icon = styled('a')((props) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  border: '1px solid',
+  borderRadius: '50%',
+  height: '60px',
+  width: '60px',
+  margin: '10px',
+  fontSize: 'xx-large',
+  color: props.theme.palette.secondary.contrastText,
+  cursor: 'pointer',
+  /*  -webkit-transition-duration: 0.3s,
   transition-duration: 0.3s;
   -webkit-transition-property: transform;
-  transition-property: transform;
-  :hover {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.1);
-    color: white;
-    background-color: #ff0063;
-  }
-`;
+  transition-property: transform; */
+  '&:hover': {
+    /* -webkit-transform: scale(1.5); */
+    transform: 'scale(1.1)',
+    color: props.theme.palette.text.secondary,
+    backgroundColor: props.theme.palette.secondary.contrastText,
+    border: 'none',
+  },
+}));

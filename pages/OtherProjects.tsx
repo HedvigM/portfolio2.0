@@ -13,7 +13,15 @@ export const OtherProjects = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <Typography variant='h2'>Other Projects</Typography>
+          <Typography
+            variant='h2'
+            sx={{
+              backgroundColor: 'primary.contrastText',
+              color: 'text.primary',
+            }}
+          >
+            Other Projects
+          </Typography>
         </Box>
         {OtherProjectsText.map((text, index) => (
           <Box sx={{ paddingBottom: '20px' }}>
@@ -23,13 +31,27 @@ export const OtherProjects = () => {
             <Typography variant='body1'>{text.description}</Typography>
             <Box sx={{ marginTop: '15px' }}>
               {text.tags.map((tag, index) => (
-                <Typography key={index} variant='h6'>
+                <Typography
+                  key={index}
+                  variant='h6'
+                  sx={{
+                    backgroundColor: 'primary.contrastText',
+                    color: 'text.primary',
+                  }}
+                >
                   {tag}
                 </Typography>
               ))}
               <Typography
                 variant='h6'
-                sx={{ backgroundColor: 'secondary.main', color: 'white' }}
+                sx={{
+                  backgroundColor: 'secondary.contrastText',
+                  '&:hover': {
+                    border: '1px solid',
+                    color: 'primary.contrastText',
+                    backgroundColor: 'primary.main',
+                  },
+                }}
               >
                 <H6Variant
                   aria-label={text.ariaLabel}
@@ -43,7 +65,14 @@ export const OtherProjects = () => {
               </Typography>
               <Typography
                 variant='h6'
-                sx={{ backgroundColor: 'secondary.main' }}
+                sx={{
+                  backgroundColor: 'secondary.contrastText',
+                  '&:hover': {
+                    border: '1px solid',
+                    color: 'primary.contrastText',
+                    backgroundColor: 'primary.main',
+                  },
+                }}
               >
                 <H6Variant
                   aria-label={text.ariaLabel}
@@ -63,7 +92,10 @@ export const OtherProjects = () => {
   );
 };
 
-const H6Variant = styled.a`
-  color: white;
-  text-decoration: none;
-`;
+const H6Variant = styled('a')((props) => ({
+  textDecoration: 'none',
+  color: props.theme.palette.text.secondary,
+  '&:hover': {
+    color: props.theme.palette.text.primary,
+  },
+}));

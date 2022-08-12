@@ -13,12 +13,20 @@ import { projects } from './Text';
 
 export const FeaturedProjects = () => {
   return (
-    <Box sx={{ backgroundColor: 'primary.dark', paddingBottom: '50px' }}>
+    <Box sx={{ backgroundColor: 'secondary.main', paddingBottom: '50px' }}>
       <Container maxWidth='md'>
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <Typography variant='h2'>Featured Projects</Typography>
+          <Typography
+            variant='h2'
+            sx={{
+              backgroundColor: 'primary.contrastText',
+              color: 'text.primary',
+            }}
+          >
+            Featured Projects
+          </Typography>
         </Box>
         <Box
           sx={{
@@ -71,7 +79,7 @@ export const FeaturedProjects = () => {
                 </Typography>
                 <Typography
                   variant='body2'
-                  color='text.secondary'
+                  color='text.primary'
                   paragraph
                   align='left'
                 >
@@ -85,8 +93,14 @@ export const FeaturedProjects = () => {
                   }}
                 >
                   {project.tags.map((tag, index) => (
-                    <Box>
-                      <Typography key={index} variant='h6'>
+                    <Box key={index}>
+                      <Typography
+                        variant='h6'
+                        sx={{
+                          backgroundColor: 'primary.contrastText',
+                          color: 'text.primary',
+                        }}
+                      >
                         {tag}
                       </Typography>
                     </Box>
@@ -95,8 +109,12 @@ export const FeaturedProjects = () => {
                     <Typography
                       variant='h6'
                       sx={{
-                        backgroundColor: 'secondary.main',
-                        color: 'white',
+                        backgroundColor: 'secondary.contrastText',
+                        '&:hover': {
+                          border: '1px solid',
+                          color: 'primary.contrastText',
+                          backgroundColor: 'primary.main',
+                        },
                       }}
                     >
                       <H6Variant
@@ -113,7 +131,14 @@ export const FeaturedProjects = () => {
                   <Box>
                     <Typography
                       variant='h6'
-                      sx={{ backgroundColor: 'secondary.main' }}
+                      sx={{
+                        backgroundColor: 'secondary.contrastText',
+                        '&:hover': {
+                          border: '1px solid',
+                          color: 'primary.contrastText',
+                          backgroundColor: 'primary.main',
+                        },
+                      }}
                     >
                       <H6Variant
                         aria-label='Link to the deployed project'
@@ -144,7 +169,8 @@ const Overlay = styled.div`
   bottom: 0px;
   left: 0px;
   pointer-events: none;
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgb(1, 1, 1); */
+  background: #2c2c2c7b;
   transition: '0.1s ease-in';
 
   :hover {
@@ -171,7 +197,10 @@ const Overlay = styled.div`
   }
 `;
 
-const H6Variant = styled.a`
-  color: white;
-  text-decoration: none;
-`;
+const H6Variant = styled('a')((props) => ({
+  textDecoration: 'none',
+  color: props.theme.palette.text.secondary,
+  '&:hover': {
+    color: props.theme.palette.text.primary,
+  },
+}));

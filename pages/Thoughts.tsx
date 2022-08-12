@@ -2,16 +2,25 @@ import { Box, Card, CardMedia, Container, Typography } from '@mui/material';
 import React from 'react';
 import { ThoughtsText, MoreThoughtsText } from './Text';
 import styled from '@emotion/styled';
+import { propsToClassKey } from '@mui/styles';
 
 /* Link to the thoughts */
 export const Thoughts = () => {
   return (
-    <Box sx={{ backgroundColor: 'primary.dark', paddingBottom: '50px' }}>
+    <Box sx={{ backgroundColor: 'secondary.main', paddingBottom: '50px' }}>
       <Container maxWidth='md'>
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <Typography variant='h2'>My Thoughts</Typography>
+          <Typography
+            variant='h2'
+            sx={{
+              backgroundColor: 'primary.contrastText',
+              color: 'text.primary',
+            }}
+          >
+            My Thoughts
+          </Typography>
         </Box>
         {/* mobile view - pic above instead. */}
         {ThoughtsText.map((text, index) => (
@@ -40,17 +49,32 @@ export const Thoughts = () => {
                   padding: '10px',
                 }}
               >
-                <Typography variant='h4'>{text.date}</Typography>
-                <Typography variant='h5'>{text.name}</Typography>
-                <Typography variant='body1'>
+                <Typography variant='h4' color='primary.contrastText'>
+                  {text.date}
+                </Typography>
+                <Typography variant='h5' color='text.primary'>
+                  {text.name}
+                </Typography>
+                <Typography variant='body1' color='text.primary'>
                   {text.text}
-                  <Typography sx={{ display: 'inline' }} variant='h4'>
+                  <Typography
+                    variant='h4'
+                    color='primary.contrastText'
+                    sx={{ display: 'inline' }}
+                  >
                     &nbsp;&gt;&gt;
                   </Typography>
                 </Typography>
                 <Typography
                   variant='h6'
-                  sx={{ backgroundColor: 'secondary.main', color: 'white' }}
+                  sx={{
+                    backgroundColor: 'secondary.contrastText',
+                    '&:hover': {
+                      border: '1px solid',
+                      color: 'primary.contrastText',
+                      backgroundColor: 'primary.main',
+                    },
+                  }}
                 >
                   <H6Variant
                     aria-label='Link to the deployed project'
@@ -84,6 +108,7 @@ export const Thoughts = () => {
               <Box>
                 <Typography
                   variant='h4'
+                  color='primary.contrastText'
                   sx={{ display: 'inline', paddingRight: '10px' }}
                 >
                   {text.date}
@@ -99,14 +124,25 @@ export const Thoughts = () => {
                   >
                     {text.text}
                   </Link>
-                  <Typography sx={{ display: 'inline' }} variant='h4'>
+                  <Typography
+                    variant='h4'
+                    color='primary.contrastText'
+                    sx={{ display: 'inline' }}
+                  >
                     &nbsp;&gt;&gt;
                   </Typography>
                 </Typography>
               </Box>
               <Typography
                 variant='h6'
-                sx={{ backgroundColor: 'secondary.main', color: 'white' }}
+                sx={{
+                  backgroundColor: 'secondary.contrastText',
+                  '&:hover': {
+                    border: '1px solid',
+                    color: 'primary.contrastText',
+                    backgroundColor: 'primary.main',
+                  },
+                }}
               >
                 <H6Variant
                   aria-label='Link to the deployed project'
@@ -126,40 +162,30 @@ export const Thoughts = () => {
   );
 };
 
-const Image = styled.div`
-  background-color: #ff0063;
-  width: 300px;
-  height: 300px;
-  display: block;
-
-  :hover {
-    background-color: turquoise;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-  }
-`;
 /* Make a style in the library for this one */
-const Heading = styled.p`
-  font-size: 1.7rem;
-  font-weight: 700;
-  font-family: Roboto;
-  text-transform: uppercase;
-  color: #66bfbf;
-  margin: 0;
-`;
+const Heading = styled('p')((props) => ({
+  fontSize: '1.7rem',
+  fontWeight: '700',
+  fontFamily: 'Roboto',
+  textTransform: 'uppercase',
+  color: props.theme.palette.primary.contrastText,
+  margin: '0',
+}));
 
-const Link = styled.a`
-  text-decoration: none;
-  color: black;
-  :hover {
-    color: #ff0063;
-    text-decoration: underline;
-  }
-`;
+const Link = styled('a')((props) => ({
+  color: props.theme.palette.text.primary,
+  textDecoration: 'none',
 
-const H6Variant = styled.a`
-  color: white;
-  text-decoration: none;
-`;
+  '&:hover': {
+    color: props.theme.palette.secondary.contrastText,
+    textDecoration: 'underline',
+  },
+}));
+
+const H6Variant = styled('a')((props) => ({
+  textDecoration: 'none',
+  color: props.theme.palette.text.secondary,
+  '&:hover': {
+    color: props.theme.palette.text.primary,
+  },
+}));

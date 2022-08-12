@@ -18,24 +18,40 @@ export const Contact = () => {
         >
           {ContactText.map((contact, index) => (
             <Box key={index}>
-              <Typography variant='h2'>{contact.heading}</Typography>
               <Typography
-                variant='body1'
-                sx={{ color: 'white', textAlign: 'center' }}
+                variant='h2'
+                sx={{
+                  backgroundColor: 'primary.contrastText',
+                  color: 'text.primary',
+                }}
+              >
+                {contact.heading}
+              </Typography>
+              <Typography
+                variant='h4'
+                color='text.primary'
+                textAlign='center'
+                padding='5px'
               >
                 {contact.name}
               </Typography>
               <Typography
-                variant='body1'
-                sx={{ color: 'white', textAlign: 'center' }}
+                variant='h4'
+                color='text.primary'
+                textAlign='center'
+                padding='5px'
+                sx={{ textAlign: 'center' }}
               >
-                {contact.number}
+                <A href='tel:+46705120226'>{contact.number}</A>
               </Typography>
               <Typography
-                variant='body1'
-                sx={{ color: 'white', textAlign: 'center' }}
+                variant='h4'
+                color='text.primary'
+                textAlign='center'
+                padding='5px'
+                sx={{ textAlign: 'center' }}
               >
-                {contact.email}
+                <A href='mailto:hedvig@mejstedt.se'>{contact.email}</A>
               </Typography>
             </Box>
           ))}
@@ -45,11 +61,12 @@ export const Contact = () => {
   );
 };
 
-const Heading = styled.p`
-  font-size: 1.7rem;
-  font-weight: 700;
-  font-family: Roboto;
-  text-transform: uppercase;
-  color: white;
-  margin: 0;
-`;
+const A = styled('a')((props) => ({
+  color: props.theme.palette.text.primary,
+  textDecoration: 'none',
+
+  '&:hover': {
+    color: props.theme.palette.secondary.contrastText,
+    textDecoration: 'underline',
+  },
+}));
