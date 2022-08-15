@@ -1,6 +1,6 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, styled, Typography } from '@mui/material';
 import React from 'react';
-import styled from '@emotion/styled';
+import { H2, H4 } from 'styles/theme';
 import { ContactText } from './Text';
 
 export const Contact = () => {
@@ -18,41 +18,40 @@ export const Contact = () => {
         >
           {ContactText.map((contact, index) => (
             <Box key={index}>
-              <Typography
-                variant='h2'
+              <H2>{contact.heading}</H2>
+              <H4
                 sx={{
-                  backgroundColor: 'primary.contrastText',
                   color: 'text.primary',
+                  textAlign: 'center',
+                  padding: '5px',
+                  margin: '0',
                 }}
               >
-                {contact.heading}
-              </Typography>
-              <Typography
-                variant='h4'
-                color='text.primary'
-                textAlign='center'
-                padding='5px'
-              >
                 {contact.name}
-              </Typography>
-              <Typography
-                variant='h4'
-                color='text.primary'
-                textAlign='center'
-                padding='5px'
-                sx={{ textAlign: 'center' }}
+              </H4>
+              <H4
+                sx={{
+                  color: 'text.primary',
+                  textAlign: 'center',
+                  padding: '5px',
+                  margin: '0',
+                }}
               >
                 <A href='tel:+46705120226'>{contact.number}</A>
-              </Typography>
-              <Typography
-                variant='h4'
-                color='text.primary'
-                textAlign='center'
-                padding='5px'
-                sx={{ textAlign: 'center' }}
-              >
-                <A href='mailto:hedvig@mejstedt.se'>{contact.email}</A>
-              </Typography>
+              </H4>
+              <H4>
+                <A
+                  href='mailto:hedvig@mejstedt.se'
+                  sx={{
+                    color: 'text.primary',
+                    textAlign: 'center',
+                    padding: '5px',
+                    margin: '0',
+                  }}
+                >
+                  {contact.email}
+                </A>
+              </H4>
             </Box>
           ))}
         </Box>

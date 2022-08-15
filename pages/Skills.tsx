@@ -1,7 +1,7 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, styled, Typography } from '@mui/material';
 import React from 'react';
+import { H2 } from 'styles/theme';
 import { SkillsText } from './Text';
-import styled from '@emotion/styled';
 
 export const Skills = () => {
   return (
@@ -10,15 +10,7 @@ export const Skills = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <Typography
-            variant='h2'
-            sx={{
-              backgroundColor: 'primary.contrastText',
-              color: 'text.primary',
-            }}
-          >
-            Skills
-          </Typography>
+          <H2>Skills</H2>
         </Box>
         <Box
           sx={{
@@ -67,5 +59,6 @@ const Heading = styled('p')((props) => ({
   fontFamily: 'Roboto',
   textTransform: 'uppercase',
   color: props.theme.palette.primary.contrastText,
+
   margin: '0',
 }));

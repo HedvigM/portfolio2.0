@@ -9,7 +9,7 @@ import { getDesignTokens } from 'styles/theme';
 
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
-import { useTheme, createTheme } from '@mui/material/styles';
+import { useTheme, createTheme, Theme } from '@mui/material/styles';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 
@@ -17,7 +17,7 @@ const clientSideEmotionCache = createCache({ key: 'css', prepend: true });
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function ToggleTheme() {
-  const theme = useTheme();
+  const theme: Theme = useTheme();
   const colorMode = React.useContext(ColorModeContext);
   return (
     <Box

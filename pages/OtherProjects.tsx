@@ -1,10 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Box, Container, Typography } from '@mui/material';
-import styled from '@emotion/styled';
+import { Box, Container, styled, Typography } from '@mui/material';
 import React from 'react';
 import { OtherProjectsText } from './Text';
-import { grey } from '@mui/material/colors';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Body1, H2, H3, H6 } from 'styles/theme';
 
 export const OtherProjects = () => {
   return (
@@ -13,34 +12,23 @@ export const OtherProjects = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <Typography
-            variant='h2'
-            sx={{
-              backgroundColor: 'primary.contrastText',
-              color: 'text.primary',
-            }}
-          >
-            Other Projects
-          </Typography>
+          <H2>Other Projects</H2>
         </Box>
         {OtherProjectsText.map((text, index) => (
           <Box sx={{ paddingBottom: '20px' }}>
-            <Typography key={index} variant='h3'>
-              {text.name}
-            </Typography>
-            <Typography variant='body1'>{text.description}</Typography>
+            <H3>{text.name}</H3>
+            <Body1>{text.description}</Body1>
             <Box sx={{ marginTop: '15px' }}>
               {text.tags.map((tag, index) => (
-                <Typography
+                <H6
                   key={index}
-                  variant='h6'
                   sx={{
                     backgroundColor: 'primary.contrastText',
                     color: 'text.primary',
                   }}
                 >
                   {tag}
-                </Typography>
+                </H6>
               ))}
               <H6Variant
                 aria-label={text.ariaLabel}
@@ -49,8 +37,7 @@ export const OtherProjects = () => {
                 target='_blank'
                 href={text.deployed}
               >
-                <Typography
-                  variant='h6'
+                <H6
                   sx={{
                     backgroundColor: 'secondary.contrastText',
                     '&:hover': {
@@ -60,7 +47,7 @@ export const OtherProjects = () => {
                   }}
                 >
                   Deployed project
-                </Typography>
+                </H6>
               </H6Variant>
               <H6Variant
                 aria-label={text.ariaLabel}
@@ -69,8 +56,7 @@ export const OtherProjects = () => {
                 target='_blank'
                 href={text.github}
               >
-                <Typography
-                  variant='h6'
+                <H6
                   sx={{
                     backgroundColor: 'secondary.contrastText',
                     '&:hover': {
@@ -80,7 +66,7 @@ export const OtherProjects = () => {
                   }}
                 >
                   <FontAwesomeIcon icon={faGithub} />
-                </Typography>
+                </H6>
               </H6Variant>
             </Box>
           </Box>

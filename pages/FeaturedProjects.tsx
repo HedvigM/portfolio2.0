@@ -4,12 +4,13 @@ import {
   CardContent,
   CardMedia,
   Container,
+  styled,
   Typography,
 } from '@mui/material';
-import styled from '@emotion/styled';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { projects } from './Text';
+import { Body1, H2, H3, H6 } from 'styles/theme';
 
 export const FeaturedProjects = () => {
   return (
@@ -18,15 +19,7 @@ export const FeaturedProjects = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <Typography
-            variant='h2'
-            sx={{
-              backgroundColor: 'primary.contrastText',
-              color: 'text.primary',
-            }}
-          >
-            Featured Projects
-          </Typography>
+          <H2>Featured Projects</H2>
         </Box>
         <Box
           sx={{
@@ -53,7 +46,7 @@ export const FeaturedProjects = () => {
                 }}
               >
                 <Overlay>
-                  <p>{project.name}</p>
+                  <P>{project.name}</P>
                 </Overlay>
                 <CardMedia
                   sx={[
@@ -74,17 +67,8 @@ export const FeaturedProjects = () => {
                 ></CardMedia>
               </Box>
               <CardContent>
-                <Typography variant='h3' component='div'>
-                  {project.name}
-                </Typography>
-                <Typography
-                  variant='body2'
-                  color='text.primary'
-                  paragraph
-                  align='left'
-                >
-                  {project.discription}
-                </Typography>
+                <H3> {project.name}</H3>
+                <Body1>{project.discription}</Body1>
                 <Box
                   sx={{
                     marginTop: '15px',
@@ -94,15 +78,14 @@ export const FeaturedProjects = () => {
                 >
                   {project.tags.map((tag, index) => (
                     <Box key={index}>
-                      <Typography
-                        variant='h6'
+                      <H6
                         sx={{
                           backgroundColor: 'primary.contrastText',
                           color: 'text.primary',
                         }}
                       >
                         {tag}
-                      </Typography>
+                      </H6>
                     </Box>
                   ))}
                   <Box>
@@ -113,8 +96,7 @@ export const FeaturedProjects = () => {
                       target='_blank'
                       href={project.deployed}
                     >
-                      <Typography
-                        variant='h6'
+                      <H6
                         sx={{
                           backgroundColor: 'secondary.contrastText',
                           '&:hover': {
@@ -124,7 +106,7 @@ export const FeaturedProjects = () => {
                         }}
                       >
                         Deployed project
-                      </Typography>
+                      </H6>
                     </H6Variant>
                   </Box>
                   <Box>
@@ -135,8 +117,7 @@ export const FeaturedProjects = () => {
                       target='_blank'
                       href={project.github}
                     >
-                      <Typography
-                        variant='h6'
+                      <H6
                         sx={{
                           backgroundColor: 'secondary.contrastText',
                           '&:hover': {
@@ -146,7 +127,7 @@ export const FeaturedProjects = () => {
                         }}
                       >
                         <FontAwesomeIcon icon={['fab', 'github']} />
-                      </Typography>
+                      </H6>
                     </H6Variant>
                   </Box>
                 </Box>
@@ -159,41 +140,38 @@ export const FeaturedProjects = () => {
   );
 };
 
-const Overlay = styled.div`
-  position: absolute;
-  display: inline;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  pointer-events: none;
+const Overlay = styled('div')((props) => ({
+  position: 'absolute',
+  display: 'inline',
+  top: '0px',
+  right: '0px',
+  bottom: '0px',
+  left: '0px',
+  pointerEvents: 'none',
   /* background: rgb(1, 1, 1); */
-  background: #2c2c2c7b;
-  transition: '0.1s ease-in';
+  background: '#2c2c2c7b',
+  transition: '0.1s ease-in',
+}));
 
-  :hover {
-  }
+const P = styled('p')((props) => ({
+  position: 'absolute',
+  fontWeight: '200',
+  color: 'white',
+  display: 'flex',
+  fontFamily: 'Roboto',
+  fontSize: '25px',
+  top: '0',
+  bottom: '0',
+  right: '0',
+  left: '0',
+  margin: '0',
+  justifyContent: 'center',
+  alignItems: 'center',
 
-  p {
-    position: absolute;
-    font-weight: 200;
-    color: white;
-    display: flex;
-    font-family: 'Roboto', sans-serif;
-    font-size: 25px;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 0;
-    justify-content: center;
-    align-items: center;
-
-    :hover {
-      color: transparent;
-    }
-  }
-`;
+  '&:hover': {
+    color: 'transparent',
+  },
+}));
 
 const H6Variant = styled('a')((props) => ({
   textDecoration: 'none',

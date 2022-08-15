@@ -1,8 +1,14 @@
-import { Box, Card, CardMedia, Container, Typography } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardMedia,
+  Container,
+  styled,
+  Typography,
+} from '@mui/material';
 import React from 'react';
+import { Body1, H2, H4, H5, H6 } from 'styles/theme';
 import { ThoughtsText, MoreThoughtsText } from './Text';
-import styled from '@emotion/styled';
-import { propsToClassKey } from '@mui/styles';
 
 /* Link to the thoughts */
 export const Thoughts = () => {
@@ -12,15 +18,7 @@ export const Thoughts = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <Typography
-            variant='h2'
-            sx={{
-              backgroundColor: 'primary.contrastText',
-              color: 'text.primary',
-            }}
-          >
-            My Thoughts
-          </Typography>
+          <H2>My Thoughts</H2>
         </Box>
         {/* mobile view - pic above instead. */}
         {ThoughtsText.map((text, index) => (
@@ -49,22 +47,14 @@ export const Thoughts = () => {
                   padding: '10px',
                 }}
               >
-                <Typography variant='h4' color='primary.contrastText'>
-                  {text.date}
-                </Typography>
+                <H4>{text.date}</H4>
                 <Typography variant='h5' color='text.primary'>
                   {text.name}
                 </Typography>
-                <Typography variant='body1' color='text.primary'>
+                <Body1 sx={{ color: 'text.primary' }}>
                   {text.text}
-                  <Typography
-                    variant='h4'
-                    color='primary.contrastText'
-                    sx={{ display: 'inline' }}
-                  >
-                    &nbsp;&gt;&gt;
-                  </Typography>
-                </Typography>
+                  <H4 sx={{ display: 'inline' }}>&nbsp;&gt;&gt;</H4>
+                </Body1>
                 <H6Variant
                   aria-label='Link to the deployed project'
                   aria-pressed='false'
@@ -72,8 +62,7 @@ export const Thoughts = () => {
                   target='_blank'
                   href={text.href}
                 >
-                  <Typography
-                    variant='h6'
+                  <H6
                     sx={{
                       backgroundColor: 'secondary.contrastText',
                       '&:hover': {
@@ -83,7 +72,7 @@ export const Thoughts = () => {
                     }}
                   >
                     {text.more}
-                  </Typography>
+                  </H6>
                 </H6Variant>
               </Box>
             </CardMedia>
@@ -105,14 +94,8 @@ export const Thoughts = () => {
           {MoreThoughtsText.map((text, index) => (
             <Box key={index} sx={{ paddingBottom: '20px' }}>
               <Box>
-                <Typography
-                  variant='h4'
-                  color='primary.contrastText'
-                  sx={{ display: 'inline', paddingRight: '10px' }}
-                >
-                  {text.date}
-                </Typography>
-                <Typography variant='h5' sx={{ display: 'inline' }}>
+                <H4>{text.date}</H4>
+                <H5 sx={{ display: 'inline' }}>
                   <Link
                     href={text.href}
                     role='button'
@@ -123,14 +106,8 @@ export const Thoughts = () => {
                   >
                     {text.text}
                   </Link>
-                  <Typography
-                    variant='h4'
-                    color='primary.contrastText'
-                    sx={{ display: 'inline' }}
-                  >
-                    &nbsp;&gt;&gt;
-                  </Typography>
-                </Typography>
+                </H5>
+                <H4 sx={{ display: 'inline' }}>&nbsp;&gt;&gt;</H4>
               </Box>
               <H6Variant
                 aria-label='Link to the deployed project'
@@ -139,9 +116,9 @@ export const Thoughts = () => {
                 target='_blank'
                 href={text.href}
               >
-                <Typography
-                  variant='h6'
+                <H6
                   sx={{
+                    display: ' inline',
                     backgroundColor: 'secondary.contrastText',
                     '&:hover': {
                       color: 'text.primary',
@@ -150,7 +127,7 @@ export const Thoughts = () => {
                   }}
                 >
                   {text.more}
-                </Typography>
+                </H6>
               </H6Variant>
             </Box>
           ))}

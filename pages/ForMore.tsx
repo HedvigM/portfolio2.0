@@ -1,8 +1,8 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, styled, Typography } from '@mui/material';
 import React from 'react';
-import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconText } from './Text';
+import { H2, H4 } from 'styles/theme';
 
 export const ForMore = () => {
   return (
@@ -11,15 +11,7 @@ export const ForMore = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <Typography
-            variant='h2'
-            sx={{
-              backgroundColor: 'primary.contrastText',
-              color: 'text.primary',
-            }}
-          >
-            For more
-          </Typography>
+          <H2>For more</H2>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
           {IconText.map((icon, index) => (
@@ -43,9 +35,7 @@ export const ForMore = () => {
                   <FontAwesomeIcon icon={icon.icon} />
                 </Icon>
               </Icons>
-              <Typography variant='h4' sx={{ color: 'text.primary' }}>
-                {icon.iconName}
-              </Typography>
+              <H4>{icon.iconName}</H4>
             </Box>
           ))}
         </Box>
@@ -54,12 +44,13 @@ export const ForMore = () => {
   );
 };
 
-const Icons = styled.div`
-  display: flex;
-  justify-content: center;
-  font-size: xx-large;
-  padding: 0 10px 0px 10px;
-`;
+const Icons = styled('a')((props) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  fontSize: 'xx-large',
+  padding: '0 10px 0px 10px',
+}));
+
 const Icon = styled('a')((props) => ({
   display: 'flex',
   alignItems: 'center',

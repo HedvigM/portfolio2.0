@@ -1,5 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 import React from 'react';
+import { Body1 } from 'styles/theme';
 import { PresentationText } from './Text';
 
 export const Presentation = () => {
@@ -7,7 +8,7 @@ export const Presentation = () => {
     <Box sx={{ backgroundColor: 'primary.main' }}>
       <Container maxWidth='sm' sx={{ padding: '50px' }}>
         {PresentationText.map((text, index) => (
-          <Typography variant='body1' color='text.primary'>
+          <Body1 sx={{ color: 'text.primary' }}>
             <Box
               aria-hidden='true'
               sx={{
@@ -34,7 +35,7 @@ export const Presentation = () => {
             <br />
             <br />
             {text.paragraphTwo}
-          </Typography>
+          </Body1>
         ))}
       </Container>
     </Box>

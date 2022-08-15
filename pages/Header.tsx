@@ -1,25 +1,11 @@
-import {
-  Avatar,
-  Box,
-  Container,
-  FormControlLabel,
-  FormGroup,
-  Switch,
-  Typography,
-} from '@mui/material';
+import { Avatar, Box, Container, styled, Typography } from '@mui/material';
 import React from 'react';
-import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  fab,
-  faGithub,
-  faLinkedinIn,
-  faStackOverflow,
-} from '@fortawesome/free-brands-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import { HeaderText, IconText } from './Text';
 import ProfilePic from '../pages/Images';
-import ToggleTheme from './ToggleTheme';
+import { H1 } from 'styles/theme';
 
 export const Header = () => {
   library.add(fab);
@@ -68,9 +54,10 @@ export const Header = () => {
                 </p>
               </Box>
               <Box>
-                <Typography variant={'h1'} color='primary.contrastText'>
+                <H1>{text.title}</H1>
+                {/*  <Typography variant={'h1'} color='primary.contrastText'>
                   {text.title}
-                </Typography>
+                </Typography> */}
               </Box>
               <Box
                 sx={{
@@ -106,21 +93,21 @@ export const Header = () => {
   );
 };
 
-const BGImage = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('./Pictures/mountains.JPG');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-`;
+const BGImage = styled('a')((props) => ({
+  /*  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('./Pictures/mountains.JPG'); */
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  position: 'relative',
+}));
 
-const Icons = styled.div`
-  display: flex;
-  justify-content: end;
-  width: 100%;
-  font-size: xx-large;
-  padding: 10px;
-`;
+const Icons = styled('a')((props) => ({
+  display: 'flex',
+  justifyContent: 'end',
+  width: '100%',
+  fontSize: 'xx-large',
+  padding: '10px',
+}));
 
 const Icon = styled('a')((props) => ({
   display: 'flex',
@@ -139,7 +126,7 @@ const Icon = styled('a')((props) => ({
   -webkit-transition-property: transform;
   transition-property: transform; */
   '&:hover': {
-    /* -webkit-transform: scale(1.5); */
+    /*  -webkitTransform: 'scale(1.5)',  */
     transform: 'scale(1.1)',
     color: props.theme.palette.text.secondary,
     backgroundColor: props.theme.palette.secondary.contrastText,
