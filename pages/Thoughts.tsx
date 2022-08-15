@@ -1,4 +1,11 @@
-import { Box, Card, CardMedia, Container, styled } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardMedia,
+  Container,
+  styled,
+  Typography,
+} from '@mui/material';
 import React from 'react';
 import { Body1, H2, H4, H5, H6 } from 'styles/theme';
 import { ThoughtsText, MoreThoughtsText } from './Text';
@@ -48,7 +55,9 @@ export const Thoughts = () => {
                 }}
               >
                 <H4>{text.date}</H4>
-                <H5 sx={{ color: 'text.primary' }}>{text.name}</H5>
+                <Typography variant='h5' color='text.primary'>
+                  {text.name}
+                </Typography>
                 <Body1 sx={{ color: 'text.primary' }}>
                   {text.text}
                   <H4 sx={{ display: 'inline' }}>&nbsp;&gt;&gt;</H4>

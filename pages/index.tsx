@@ -1,14 +1,14 @@
 import React from 'react';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { Header } from '../Components/Header';
-import { Presentation } from '../Components/Presentation';
-import { FeaturedProjects } from '../Components/FeaturedProjects';
-import { OtherProjects } from '../Components/OtherProjects';
-import { Thoughts } from '../Components/Thoughts';
-import { Skills } from '../Components/Skills';
-import { ForMore } from '../Components/ForMore';
-import { Contact } from '../Components/Contact';
+import { Header } from './Header';
+import { Presentation } from './Presentation';
+import { FeaturedProjects } from './FeaturedProjects';
+import { OtherProjects } from './OtherProjects';
+import { Thoughts } from './Thoughts';
+import { Skills } from './Skills';
+import { ForMore } from './ForMore';
+import { Contact } from './Contact';
 
 const IndexPage: NextPage<{}> = ({}) => {
   return (

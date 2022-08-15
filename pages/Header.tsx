@@ -1,4 +1,4 @@
-import { Avatar, Box, Container, styled } from '@mui/material';
+import { Avatar, Box, Container, styled, Typography } from '@mui/material';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
