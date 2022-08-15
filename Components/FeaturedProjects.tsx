@@ -9,7 +9,8 @@ import {
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { projects } from './Text';
-import { Body1, H2, H3, H6 } from 'styles/theme';
+import { Body1, H2, H3, H6, H6Link } from 'styles/theme';
+import { inherits } from 'util';
 
 export const FeaturedProjects = () => {
   return (
@@ -95,46 +96,32 @@ export const FeaturedProjects = () => {
                     </Box>
                   ))}
                   <Box>
-                    <H6Variant
-                      aria-label='Link to the deployed project'
-                      aria-pressed='false'
-                      role='button'
-                      target='_blank'
-                      href={project.deployed}
-                    >
-                      <H6
-                        sx={{
-                          backgroundColor: 'secondary.contrastText',
-                          '&:hover': {
-                            color: 'text.primary',
-                            backgroundColor: 'primary.main',
-                          },
-                        }}
+                    <H6Link>
+                      <a
+                        aria-label='Link to the deployed project'
+                        aria-pressed='false'
+                        role='button'
+                        target='_blank'
+                        href={project.deployed}
+                        style={{ textDecoration: 'none', color: 'inherit' }}
                       >
                         Deployed project
-                      </H6>
-                    </H6Variant>
+                      </a>
+                    </H6Link>
                   </Box>
                   <Box>
-                    <H6Variant
-                      aria-label='Link to the deployed project'
-                      aria-pressed='false'
-                      role='button'
-                      target='_blank'
-                      href={project.github}
-                    >
-                      <H6
-                        sx={{
-                          backgroundColor: 'secondary.contrastText',
-                          '&:hover': {
-                            color: 'text.primary',
-                            backgroundColor: 'primary.main',
-                          },
-                        }}
+                    <H6Link>
+                      <a
+                        aria-label='Link to the deployed project'
+                        aria-pressed='false'
+                        role='button'
+                        target='_blank'
+                        href={project.github}
+                        style={{ textDecoration: 'none', color: 'inherit' }}
                       >
                         <FontAwesomeIcon icon={['fab', 'github']} />
-                      </H6>
-                    </H6Variant>
+                      </a>
+                    </H6Link>
                   </Box>
                 </Box>
               </CardContent>
@@ -176,13 +163,5 @@ const P = styled('p')((props) => ({
 
   '&:hover': {
     color: 'transparent',
-  },
-}));
-
-const H6Variant = styled('a')((props) => ({
-  textDecoration: 'none',
-  color: props.theme.palette.text.secondary,
-  '&:hover': {
-    color: props.theme.palette.text.primary,
   },
 }));

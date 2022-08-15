@@ -31,9 +31,10 @@ export const Skills = () => {
           {SkillsText.map((text, index) => (
             <Box key={index} sx={{ paddingBottom: '50px' }}>
               <Heading>{text.name}</Heading>
-              {text.list.map((list, index) =>
+              {text.list.map((list, index2) =>
                 list.startsWith('*') ? (
                   <Body1
+                    key={index2}
                     sx={{
                       textTransform: 'uppercase',
                       color: 'primary.contrastText',
@@ -44,9 +45,9 @@ export const Skills = () => {
                   </Body1>
                 ) : (
                   <Body1
+                    key={index2}
                     sx={{
-                      textTransform: 'uppercase',
-                      color: 'primary.contrastText',
+                      color: 'text.primary',
                       textAlign: 'center',
                     }}
                   >
@@ -69,6 +70,5 @@ const Heading = styled('p')((props) => ({
   fontFamily: 'Roboto',
   textTransform: 'uppercase',
   color: props.theme.palette.primary.contrastText,
-
   margin: '0',
 }));

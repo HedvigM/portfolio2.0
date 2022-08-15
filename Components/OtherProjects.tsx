@@ -3,7 +3,7 @@ import { Box, Container, styled } from '@mui/material';
 import React from 'react';
 import { OtherProjectsText } from './Text';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { Body1, H2, H3, H6 } from 'styles/theme';
+import { Body1, H2, H3, H6, H6Link } from 'styles/theme';
 
 export const OtherProjects = () => {
   return (
@@ -22,7 +22,7 @@ export const OtherProjects = () => {
           </H2>
         </Box>
         {OtherProjectsText.map((text, index) => (
-          <Box sx={{ paddingBottom: '20px' }}>
+          <Box key={index} sx={{ paddingBottom: '20px' }}>
             <H3>{text.name}</H3>
             <Body1>{text.description}</Body1>
             <Box sx={{ marginTop: '15px' }}>
@@ -37,44 +37,30 @@ export const OtherProjects = () => {
                   {tag}
                 </H6>
               ))}
-              <H6Variant
-                aria-label={text.ariaLabel}
-                aria-pressed='false'
-                role='button'
-                target='_blank'
-                href={text.deployed}
-              >
-                <H6
-                  sx={{
-                    backgroundColor: 'secondary.contrastText',
-                    '&:hover': {
-                      color: 'text.primary',
-                      backgroundColor: 'primary.main',
-                    },
-                  }}
+              <H6Link>
+                <a
+                  aria-label={text.ariaLabel}
+                  aria-pressed='false'
+                  role='button'
+                  target='_blank'
+                  href={text.deployed}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
                 >
                   Deployed project
-                </H6>
-              </H6Variant>
-              <H6Variant
-                aria-label={text.ariaLabel}
-                aria-pressed='false'
-                role='button'
-                target='_blank'
-                href={text.github}
-              >
-                <H6
-                  sx={{
-                    backgroundColor: 'secondary.contrastText',
-                    '&:hover': {
-                      color: 'text.primary',
-                      backgroundColor: 'primary.main',
-                    },
-                  }}
+                </a>
+              </H6Link>
+              <H6Link>
+                <a
+                  aria-label={text.ariaLabel}
+                  aria-pressed='false'
+                  role='button'
+                  target='_blank'
+                  href={text.github}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
                 >
                   <FontAwesomeIcon icon={faGithub} />
-                </H6>
-              </H6Variant>
+                </a>
+              </H6Link>
             </Box>
           </Box>
         ))}
@@ -82,11 +68,3 @@ export const OtherProjects = () => {
     </Box>
   );
 };
-
-const H6Variant = styled('a')((props) => ({
-  textDecoration: 'none',
-  color: props.theme.palette.text.secondary,
-  '&:hover': {
-    color: props.theme.palette.text.primary,
-  },
-}));

@@ -1,6 +1,6 @@
 import { Box, Card, CardMedia, Container, styled } from '@mui/material';
 import React from 'react';
-import { Body1, H2, H4, H5, H6 } from 'styles/theme';
+import { Body1, H2, H4, H5, H6, H6Link } from 'styles/theme';
 import { ThoughtsText, MoreThoughtsText } from './Text';
 
 /* Link to the thoughts */
@@ -51,27 +51,21 @@ export const Thoughts = () => {
                 <H5 sx={{ color: 'text.primary' }}>{text.name}</H5>
                 <Body1 sx={{ color: 'text.primary' }}>
                   {text.text}
-                  <H4 sx={{ display: 'inline' }}>&nbsp;&gt;&gt;</H4>
+                  <Span>&nbsp;&gt;&gt;</Span>
                 </Body1>
-                <H6Variant
-                  aria-label='Link to the deployed project'
-                  aria-pressed='false'
-                  role='button'
-                  target='_blank'
-                  href={text.href}
-                >
-                  <H6
-                    sx={{
-                      backgroundColor: 'secondary.contrastText',
-                      '&:hover': {
-                        color: 'text.primary',
-                        backgroundColor: 'primary.main',
-                      },
-                    }}
+                <H6Link>
+                  <a
+                    aria-label='Link to the deployed project'
+                    aria-pressed='false'
+                    role='button'
+                    target='_blank'
+                    rel='noreferrer'
+                    href={text.href}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     {text.more}
-                  </H6>
-                </H6Variant>
+                  </a>
+                </H6Link>
               </Box>
             </CardMedia>
             <CardMedia
@@ -105,28 +99,21 @@ export const Thoughts = () => {
                     {text.text}
                   </Link>
                 </H5>
-                <H4 sx={{ display: 'inline' }}>&nbsp;&gt;&gt;</H4>
+                <Span>&nbsp;&gt;&gt;</Span>
               </Box>
-              <H6Variant
-                aria-label='Link to the deployed project'
-                aria-pressed='false'
-                role='button'
-                target='_blank'
-                href={text.href}
-              >
-                <H6
-                  sx={{
-                    display: ' inline',
-                    backgroundColor: 'secondary.contrastText',
-                    '&:hover': {
-                      color: 'text.primary',
-                      backgroundColor: 'primary.main',
-                    },
-                  }}
+              <H6Link>
+                <a
+                  aria-label='Link to the deployed project'
+                  aria-pressed='false'
+                  role='button'
+                  rel='noreferrer'
+                  target='_blank'
+                  href={text.href}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
                 >
                   {text.more}
-                </H6>
-              </H6Variant>
+                </a>
+              </H6Link>
             </Box>
           ))}
         </Container>
@@ -154,11 +141,11 @@ const Link = styled('a')((props) => ({
     textDecoration: 'underline',
   },
 }));
-
-const H6Variant = styled('a')((props) => ({
-  textDecoration: 'none',
-  color: props.theme.palette.text.secondary,
-  '&:hover': {
-    color: props.theme.palette.text.primary,
-  },
+const Span = styled('span')((props) => ({
+  display: 'inline',
+  fontSize: '1.15rem',
+  fontWeight: 400,
+  fontFamily: 'Roboto',
+  textTransform: 'uppercase',
+  color: props.theme.palette.primary.contrastText,
 }));

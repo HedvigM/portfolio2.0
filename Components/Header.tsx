@@ -29,13 +29,13 @@ export const Header = () => {
         </Box>
         {HeaderText.map((text, index) => (
           <Box
+            key={index}
             sx={{
               display: 'flex',
               justifyContent: 'space-around',
             }}
           >
             <Box
-              key={index}
               sx={{
                 maxWidth: '200px',
               }}
@@ -93,7 +93,7 @@ export const Header = () => {
   );
 };
 
-const BGImage = styled('a')((props) => ({
+const BGImage = styled('div')((props) => ({
   /*  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   url('./Pictures/mountains.JPG'); */
   backgroundSize: 'cover',
@@ -101,7 +101,7 @@ const BGImage = styled('a')((props) => ({
   position: 'relative',
 }));
 
-const Icons = styled('a')((props) => ({
+const Icons = styled('div')((props) => ({
   display: 'flex',
   justifyContent: 'end',
   width: '100%',

@@ -1,5 +1,6 @@
 
 import { PaletteMode, styled, Typography } from '@mui/material';
+import { cyan } from '@mui/material/colors';
 
 
 export const getDesignTokens = (mode: PaletteMode) => ({
@@ -99,6 +100,25 @@ export const H6 = styled(Typography)((props) => ({
   margin: '2px',
   borderRadius: '2px',
 }))  
+
+export const H6Link = styled(Typography)((props) => ({
+  fontSize: '1rem',
+  fontWeight: 300,
+  color: props.theme.palette.text.secondary,
+  backgroundColor: props.theme.palette.secondary.contrastText,
+  padding: '0px 10px',
+  lineHeight: '1.4',
+  textAlign: 'center',
+  display: 'inline',
+  fontFamily: 'Roboto',
+  margin: '2px',
+  borderRadius: '2px',
+
+  '&:hover': {
+    color: props.theme.palette.text.primary,
+    backgroundColor: props.theme.palette.primary.main
+  },
+}))
 
 export const Body1 = styled(Typography)((props) => ({  
   fontSize: '1rem',

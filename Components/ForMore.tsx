@@ -42,7 +42,7 @@ export const ForMore = () => {
                   <FontAwesomeIcon icon={icon.icon} />
                 </Icon>
               </Icons>
-              <H4>{icon.iconName}</H4>
+              <H4 sx={{ color: 'text.primary' }}>{icon.iconName}</H4>
             </Box>
           ))}
         </Box>
@@ -51,7 +51,7 @@ export const ForMore = () => {
   );
 };
 
-const Icons = styled('a')((props) => ({
+const Icons = styled('div')((props) => ({
   display: 'flex',
   justifyContent: 'center',
   fontSize: 'xx-large',
