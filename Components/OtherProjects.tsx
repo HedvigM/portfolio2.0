@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Box, Container, styled, Typography } from '@mui/material';
+import { Box, Container, styled } from '@mui/material';
 import React from 'react';
 import { OtherProjectsText } from './Text';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
