@@ -18,7 +18,14 @@ export const Thoughts = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <H2>My Thoughts</H2>
+          <H2
+            sx={{
+              backgroundColor: 'primary.contrastText',
+              color: 'text.primary',
+            }}
+          >
+            My Thoughts
+          </H2>
         </Box>
         {/* mobile view - pic above instead. */}
         {ThoughtsText.map((text, index) => (

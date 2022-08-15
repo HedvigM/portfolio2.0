@@ -1,6 +1,5 @@
 
-import { createTheme, PaletteMode, styled } from '@mui/material';
-import { amber, deepOrange, green, grey, lime, orange, red } from '@mui/material/colors';
+import { PaletteMode, styled, Typography } from '@mui/material';
 
 
 export const getDesignTokens = (mode: PaletteMode) => ({
@@ -48,7 +47,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
 });
 
 
-export const H1 = styled('h1')((props) => ({
+export const H1 = styled(Typography)((props) => ({
     fontSize: '2rem',
     fontWeight: 700,
     fontFamily: 'Roboto',
@@ -56,26 +55,24 @@ export const H1 = styled('h1')((props) => ({
     color: '#66BFBF',
 }))
 
-export const H2 = styled('h2')((props) => ({
+export const H2 = styled(Typography)((props) => ({
     fontSize: '1.5rem',
     fontWeight: 700,
     textTransform: 'uppercase',
-    color: 'white',
-    backgroundColor: '#66BFBF',
     padding: '0px 10px',
     textAlign: 'center',
     display: 'inline',
     fontFamily: 'Roboto',
 }))
 
-export const H3 = styled('h3')((props) => ({
+export const H3 = styled(Typography)((props) => ({
   fontSize: '1.2rem',
   fontWeight: 700,
   fontFamily: 'Roboto',
   textTransform: 'uppercase',
 }))
 
-export const H4 = styled('h4')((props) => ({
+export const H4 = styled(Typography)((props) => ({
   fontSize: '1.15rem',
   fontWeight: 400,
   fontFamily: 'Roboto',
@@ -83,13 +80,13 @@ export const H4 = styled('h4')((props) => ({
   color: '#66BFBF',
 }))
 
-export const H5 = styled('h5')((props) => ({  
+export const H5 = styled(Typography)((props) => ({  
   fontSize: '1.07rem',
   fontWeight: 700,
   lineHeight: '1.4',
 }))
 
-export const H6 = styled('h6')((props) => ({
+export const H6 = styled(Typography)((props) => ({
   fontSize: '1rem',
   fontWeight: 300,
   color: 'black',
@@ -103,7 +100,7 @@ export const H6 = styled('h6')((props) => ({
   borderRadius: '2px',
 }))  
 
-export const Body1 = styled('p')((props) => ({  
+export const Body1 = styled(Typography)((props) => ({  
   fontSize: '1rem',
   fontFamily: 'Roboto',
   textAlign: 'left',

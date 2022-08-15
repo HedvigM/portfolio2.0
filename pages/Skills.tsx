@@ -10,7 +10,14 @@ export const Skills = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <H2>Skills</H2>
+          <H2
+            sx={{
+              backgroundColor: 'primary.contrastText',
+              color: 'text.primary',
+            }}
+          >
+            Skills
+          </H2>
         </Box>
         <Box
           sx={{

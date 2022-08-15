@@ -19,7 +19,14 @@ export const FeaturedProjects = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <H2>Featured Projects</H2>
+          <H2
+            sx={{
+              backgroundColor: 'primary.contrastText',
+              color: 'text.primary',
+            }}
+          >
+            Featured Projects
+          </H2>
         </Box>
         <Box
           sx={{

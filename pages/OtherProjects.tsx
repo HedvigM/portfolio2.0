@@ -12,7 +12,14 @@ export const OtherProjects = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <H2>Other Projects</H2>
+          <H2
+            sx={{
+              backgroundColor: 'primary.contrastText',
+              color: 'text.primary',
+            }}
+          >
+            Other Projects
+          </H2>
         </Box>
         {OtherProjectsText.map((text, index) => (
           <Box sx={{ paddingBottom: '20px' }}>
