@@ -18,14 +18,7 @@ export const Contact = () => {
         >
           {ContactText.map((contact, index) => (
             <Box key={index}>
-              <H2
-                sx={{
-                  backgroundColor: 'primary.contrastText',
-                  color: 'text.primary',
-                }}
-              >
-                {contact.heading}
-              </H2>
+              <H2>{contact.heading}</H2>
               <H4
                 sx={{
                   color: 'text.primary',

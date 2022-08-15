@@ -10,7 +10,6 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { projects } from './Text';
 import { Body1, H2, H3, H6, H6Link } from 'styles/theme';
-import { inherits } from 'util';
 
 export const FeaturedProjects = () => {
   return (
@@ -19,14 +18,7 @@ export const FeaturedProjects = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <H2
-            sx={{
-              backgroundColor: 'primary.contrastText',
-              color: 'text.primary',
-            }}
-          >
-            Featured Projects
-          </H2>
+          <H2>Featured Projects</H2>
         </Box>
         <Box
           sx={{
@@ -74,7 +66,7 @@ export const FeaturedProjects = () => {
                 ></CardMedia>
               </Box>
               <CardContent>
-                <H3> {project.name}</H3>
+                <H3>{project.name}</H3>
                 <Body1>{project.discription}</Body1>
                 <Box
                   sx={{
@@ -85,14 +77,7 @@ export const FeaturedProjects = () => {
                 >
                   {project.tags.map((tag, index) => (
                     <Box key={index}>
-                      <H6
-                        sx={{
-                          backgroundColor: 'primary.contrastText',
-                          color: 'text.primary',
-                        }}
-                      >
-                        {tag}
-                      </H6>
+                      <H6>{tag}</H6>
                     </Box>
                   ))}
                   <Box>

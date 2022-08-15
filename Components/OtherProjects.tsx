@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Box, Container, styled } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import React from 'react';
 import { OtherProjectsText } from './Text';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -12,14 +12,7 @@ export const OtherProjects = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <H2
-            sx={{
-              backgroundColor: 'primary.contrastText',
-              color: 'text.primary',
-            }}
-          >
-            Other Projects
-          </H2>
+          <H2>Other Projects</H2>
         </Box>
         {OtherProjectsText.map((text, index) => (
           <Box key={index} sx={{ paddingBottom: '20px' }}>
@@ -27,15 +20,7 @@ export const OtherProjects = () => {
             <Body1>{text.description}</Body1>
             <Box sx={{ marginTop: '15px' }}>
               {text.tags.map((tag, index) => (
-                <H6
-                  key={index}
-                  sx={{
-                    backgroundColor: 'primary.contrastText',
-                    color: 'text.primary',
-                  }}
-                >
-                  {tag}
-                </H6>
+                <H6 key={index}>{tag}</H6>
               ))}
               <H6Link>
                 <a

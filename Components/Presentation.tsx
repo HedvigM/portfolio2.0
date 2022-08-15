@@ -8,7 +8,7 @@ export const Presentation = () => {
     <Box sx={{ backgroundColor: 'primary.main' }}>
       <Container maxWidth='sm' sx={{ padding: '50px' }}>
         {PresentationText.map((text, index) => (
-          <Body1 key={index} sx={{ color: 'text.primary' }}>
+          <Body1 key={index}>
             <Line aria-hidden='true'></Line>
             <Dot aria-hidden='true'></Dot>
 

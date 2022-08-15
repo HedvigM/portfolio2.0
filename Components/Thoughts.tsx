@@ -11,14 +11,7 @@ export const Thoughts = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <H2
-            sx={{
-              backgroundColor: 'primary.contrastText',
-              color: 'text.primary',
-            }}
-          >
-            My Thoughts
-          </H2>
+          <H2>My Thoughts</H2>
         </Box>
         {/* mobile view - pic above instead. */}
         {ThoughtsText.map((text, index) => (
@@ -48,8 +41,8 @@ export const Thoughts = () => {
                 }}
               >
                 <H4>{text.date}</H4>
-                <H5 sx={{ color: 'text.primary' }}>{text.name}</H5>
-                <Body1 sx={{ color: 'text.primary' }}>
+                <H5>{text.name}</H5>
+                <Body1>
                   {text.text}
                   <Span>&nbsp;&gt;&gt;</Span>
                 </Body1>

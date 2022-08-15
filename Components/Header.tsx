@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { HeaderText, IconText } from './Text';
-import ProfilePic from '../pages/Images';
 import { H1 } from 'styles/theme';
 
 export const Header = () => {
@@ -55,9 +54,6 @@ export const Header = () => {
               </Box>
               <Box>
                 <H1>{text.title}</H1>
-                {/*  <Typography variant={'h1'} color='primary.contrastText'>
-                  {text.title}
-                </Typography> */}
               </Box>
               <Box
                 sx={{
@@ -83,7 +79,10 @@ export const Header = () => {
                   border: '3px solid white',
                 }}
               >
-                <ProfilePic />
+                <ProfilePic
+                  src='/./Pictures/profile-pic.jpg'
+                  alt='profile picture'
+                />
               </Avatar>
             </Box>
           </Box>
@@ -93,9 +92,13 @@ export const Header = () => {
   );
 };
 
+const ProfilePic = styled('img')((props) => ({
+  height: '100%',
+}));
+
 const BGImage = styled('div')((props) => ({
-  /*  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url('./Pictures/mountains.JPG'); */
+  background:
+    'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./Pictures/mountains.JPG)',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   position: 'relative',

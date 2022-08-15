@@ -27,10 +27,11 @@ export const getDesignTokens = (mode: PaletteMode) => ({
            primary: {
             main: '#121212',
             contrastText: '#D65A31',
+
           },
           secondary: {
             main: '#181818',
-            contrastText: '#EEEEEE',
+            contrastText: '#F6E9E9',
           },
           text: {
             primary: 'white',
@@ -53,7 +54,7 @@ export const H1 = styled(Typography)((props) => ({
     fontWeight: 700,
     fontFamily: 'Roboto',
     textTransform: 'uppercase',
-    color: '#66BFBF',
+    color: props.theme.palette.primary.contrastText,
 }))
 
 export const H2 = styled(Typography)((props) => ({
@@ -64,6 +65,8 @@ export const H2 = styled(Typography)((props) => ({
     textAlign: 'center',
     display: 'inline',
     fontFamily: 'Roboto',
+    backgroundColor: props.theme.palette.primary.contrastText,
+    color: props.theme.palette.text.secondary,
 }))
 
 export const H3 = styled(Typography)((props) => ({
@@ -78,20 +81,22 @@ export const H4 = styled(Typography)((props) => ({
   fontWeight: 400,
   fontFamily: 'Roboto',
   textTransform: 'uppercase',
-  color: '#66BFBF',
+  color: props.theme.palette.primary.contrastText,
 }))
 
 export const H5 = styled(Typography)((props) => ({  
   fontSize: '1.07rem',
   fontWeight: 700,
   lineHeight: '1.4',
+  /* color: props.theme.palette.text.primary, */
+  color: props.theme.palette.secondary.contrastText,
 }))
 
 export const H6 = styled(Typography)((props) => ({
   fontSize: '1rem',
   fontWeight: 300,
-  color: 'black',
-  backgroundColor: '#66BFBF',
+  color: props.theme.palette.text.primary,
+  backgroundColor: props.theme.palette.primary.contrastText,
   padding: '0px 10px',
   lineHeight: '1.4',
   textAlign: 'center',
@@ -126,5 +131,6 @@ export const Body1 = styled(Typography)((props) => ({
   textAlign: 'left',
   lineHeight: '1.7',
   textDecoration: 'none',
+  color: props.theme.palette.text.primary,
 }))
 

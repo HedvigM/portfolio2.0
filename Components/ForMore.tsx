@@ -11,14 +11,7 @@ export const ForMore = () => {
         <Box
           sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
         >
-          <H2
-            sx={{
-              backgroundColor: 'primary.contrastText',
-              color: 'text.primary',
-            }}
-          >
-            For more
-          </H2>
+          <H2>For more</H2>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'center', gap: '30px' }}>
           {IconText.map((icon, index) => (
