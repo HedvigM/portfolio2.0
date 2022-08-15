@@ -5,7 +5,6 @@ import {
   CardMedia,
   Container,
   styled,
-  Typography,
 } from '@mui/material';
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

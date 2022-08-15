@@ -1,6 +1,6 @@
-import { Box, Container, styled, Typography } from '@mui/material';
+import { Box, Container, styled } from '@mui/material';
 import React from 'react';
-import { H2 } from 'styles/theme';
+import { Body1, H2 } from 'styles/theme';
 import { SkillsText } from './Text';
 
 export const Skills = () => {
@@ -33,22 +33,25 @@ export const Skills = () => {
               <Heading>{text.name}</Heading>
               {text.list.map((list, index) =>
                 list.startsWith('*') ? (
-                  <Typography
-                    variant='body1'
-                    color='primary.contrastText'
-                    textAlign='center'
-                    sx={{ textTransform: 'uppercase' }}
+                  <Body1
+                    sx={{
+                      textTransform: 'uppercase',
+                      color: 'primary.contrastText',
+                      textAlign: 'center',
+                    }}
                   >
                     {list.replace('*', '')}
-                  </Typography>
+                  </Body1>
                 ) : (
-                  <Typography
-                    variant='body1'
-                    color='text.primary'
-                    textAlign='center'
+                  <Body1
+                    sx={{
+                      textTransform: 'uppercase',
+                      color: 'primary.contrastText',
+                      textAlign: 'center',
+                    }}
                   >
                     {list}
-                  </Typography>
+                  </Body1>
                 )
               )}
             </Box>

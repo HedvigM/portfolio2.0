@@ -1,4 +1,4 @@
-import { Box, Container, styled, Typography } from '@mui/material';
+import { Box, Container, styled } from '@mui/material';
 import React from 'react';
 import { H2, H4 } from 'styles/theme';
 import { ContactText } from './Text';
