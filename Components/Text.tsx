@@ -30,7 +30,7 @@ export const HeaderText = [
     portfolio: 'portfolio:',
     name: 'Hedvig Mejstedt',
     title: 'frontend developer',
-    more: '',
+    more: '+ UX enthusiast',
     image: '',
   },
 ];
