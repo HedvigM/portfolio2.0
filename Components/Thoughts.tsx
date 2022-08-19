@@ -41,7 +41,7 @@ export const Thoughts = () => {
                 }}
               >
                 <H4>{text.date}</H4>
-                <H5>{text.name}</H5>
+                <H5 sx={{ color: 'text.primary' }}>{text.name}</H5>
                 <Body1>
                   {text.text}
                   <Span>&nbsp;&gt;&gt;</Span>
