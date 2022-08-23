@@ -68,7 +68,7 @@ export const projects = [
     alt: 'The tunes & friends web page',
     name: 'Tunes & Friends',
     discription:
-      'Tunes & Friends was my final project at the Technigo bootcamp. I had been thinking about the concept for a long time, and I was finally ready to build it! Sign up to browse Irish folk tunes, tag tunes you know or want to learn, and find your friends to see what tunes you have in common. You can also see sheet music for tunes. Music data is provided by The Session (länk).',
+      'Sign up to browse Irish folk tunes, tag tunes you know or want to learn, and find your friends to see what tunes you have in common. You can also see sheet music for tunes. Music data is provided by The Session.',
     tags: [
       'React',
       'Styled components',
@@ -79,7 +79,7 @@ export const projects = [
       'mongoDB',
       'Local storage',
     ],
-    deployed: 'https://tunesandfriends.netlify.app/login',
+    deployed: 'https://tunes-and-friends.vercel.app/',
     github: 'https://github.com/HedvigM/my-final-project',
   },
   {
