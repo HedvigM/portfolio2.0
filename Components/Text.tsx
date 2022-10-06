@@ -61,7 +61,6 @@ export const projects = [
       'node.js',
     ],
     deployed: 'https://voyd.tv/en-US',
-    github: 'https://github.com/HedvigM/my-final-project',
   },
   {
     image: '/./Pictures/irish.png',
@@ -80,7 +79,7 @@ export const projects = [
       'Local storage',
     ],
     deployed: 'https://tunes-and-friends.vercel.app/',
-    github: 'https://github.com/HedvigM/my-final-project',
+    github: 'https://github.com/HedvigM/TunesAndFriends',
   },
   {
     image: '/./Pictures/labyrinth.png',
@@ -133,7 +132,7 @@ export const OtherProjectsText = [
   },
   {
     name: 'Harry Potter quiz',
-    description: `This project is a Harry Potter themed quiz using Redux and the global state. There are a bunch questions with different input styles, like button, picture and radiobuttons. On the last page there is a sum page that show the player's answers and the correct answers.`,
+    description: `This is a Harry Potter themed quiz using Redux and the global state. There are a bunch questions with different input styles, like button, picture and radiobuttons. On the last page there is a sum page that show the player's answers and the correct answers.`,
     tags: ['React', 'JSX', 'Styled components'],
     deployed: 'https://reduxquizliongroup1.netlify.app/',
     github: 'https://github.com/Zancotti/project-redux-quiz',
@@ -175,7 +174,7 @@ export const MoreThoughtsText = [
   {
     date: 'Mar 2022',
     name: 'Finally, Monday!',
-    text: 'Half of the course has passed. Wow. It feels incredible that half of the time has passed and that I’ve enjoyed and cherished every second. It is amazing to be able to say that I’m longing for Mondays, and mean it! But am I now a pro that always knows how to solve the problem and never does anything wrong? No.',
+    text: 'It is amazing to be able to say that I’m longing for Mondays, and mean it! But am I now a pro that always knows how to solve the problem and never does anything wrong? No.',
     href: 'https://medium.com/@hedvig.mejstedt/finally-monday-889fe0399a0f',
     more: 'Read more',
   },
