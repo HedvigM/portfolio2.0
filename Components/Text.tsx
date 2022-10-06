@@ -172,7 +172,7 @@ export const MoreThoughtsText = [
     more: 'Read more',
   },
   {
-    date: 'Mar 2022',
+    date: 'Nov 2021',
     name: 'Finally, Monday!',
     text: 'It is amazing to be able to say that I’m longing for Mondays, and mean it! But am I now a pro that always knows how to solve the problem and never does anything wrong? No.',
     href: 'https://medium.com/@hedvig.mejstedt/finally-monday-889fe0399a0f',
