@@ -67,7 +67,7 @@ export const FeaturedProjects = () => {
               </Box>
               <CardContent>
                 <H3>{project.name}</H3>
-                <Body1>{project.discription}</Body1>
+                <Body1>{project.description}</Body1>
                 <Box
                   sx={{
                     marginTop: '15px',

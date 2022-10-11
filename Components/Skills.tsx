@@ -30,6 +30,7 @@ export const Skills = () => {
                     key={index2}
                     sx={{
                       textTransform: 'uppercase',
+                      fontWeight: 'bold',
                       color: 'primary.contrastText',
                       textAlign: 'center',
                     }}
