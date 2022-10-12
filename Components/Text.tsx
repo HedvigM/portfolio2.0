@@ -150,6 +150,15 @@ export const OtherProjectsText = [
 
 export const ThoughtsText = [
   {
+    image: '/./Pictures/code-pic.png',
+    alt: 'Picture of code',
+    date: 'Oct 2022',
+    name: 'A guide to Prisma (Swedish)',
+    text: "In the latest version of my hobby project Tunes & Friends I used Prisma. I learned quite a lot during the process, and made a beginner's guide with my new knowledge.",
+    href: 'https://medium.com/@hedvig.mejstedt/en-nyb%C3%B6rjarguide-till-prisma-de8cdbb4d767',
+    more: 'Read more',
+  },
+  {
     image: '/./Pictures/code.jpg',
     alt: 'picture of happy man holding up an post-it',
     date: 'Jul 2022',
