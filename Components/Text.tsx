@@ -176,12 +176,11 @@ export const ThoughtsText = [
   },
 ];
 
-/* Skriv om den här texten */
 export const MoreThoughtsText = [
   {
     date: 'Mar 2022',
     name: 'Tunes & Friends',
-    text: 'During my parental leave, I have managed to make a website I can be proud of, a page I hope I can develop further and develop together with. ',
+    text: 'Even before I started programming, I thought that there should be an app or website for musicians — a social site where you can list the tunes you know and then see what tunes your friends know. When I had come so far in the education that we would start thinking about the final project, I knew exactly what I wanted to do — and I also felt competent enough to implement my idea I had been mulling over for a long time, finally!',
     href: 'https://medium.com/@hedvig.mejstedt/tunes-friends-f54e995e64ef',
     more: 'Read more',
   },
