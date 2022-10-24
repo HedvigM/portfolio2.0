@@ -75,7 +75,7 @@ export const Thoughts = () => {
         >
           <Heading>More Thoughts</Heading>
         </Box>
-        <Container maxWidth='sm'>
+        <Container maxWidth='md'>
           {MoreThoughtsText.map((text, index) => (
             <Box key={index} sx={{ paddingBottom: '20px' }}>
               <Box>

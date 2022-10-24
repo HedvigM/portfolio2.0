@@ -35,13 +35,11 @@ export const HeaderText = [
   },
 ];
 
-/* Rewrite this text. */
 export const PresentationText = [
   {
     paragraphOne:
       'Hello! I am a frontend developer who is not afraid to venture into new situations in search of new knowledge and challenges.',
-    paragraphTwo: `I am a trained social worker that recently graduated from Technigo's 24 week bootcamp where I spent every day learning about web
-    technologies. I loved every second of it, and I'm looking forward to working as a frontend developer and being a part of the coding community.`,
+    paragraphTwo: `I am a trained social worker (socionom) that chose to take a leap and devote myself to my dream of becoming a frontend developer. Now I find myself at work thinking about how fortunate I am to work with something I love, all day long!`,
   },
 ];
 
@@ -178,6 +176,7 @@ export const ThoughtsText = [
   },
 ];
 
+/* Skriv om den här texten */
 export const MoreThoughtsText = [
   {
     date: 'Mar 2022',
