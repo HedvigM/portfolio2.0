@@ -1,19 +1,19 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import Head from 'next/head';
-import { ThemeProvider, CssBaseline, PaletteMode } from '@mui/material';
-import { CacheProvider } from '@emotion/react';
-import createCache from '@emotion/cache';
+import React from "react";
+import { useRouter } from "next/router";
+import Head from "next/head";
+import { ThemeProvider, CssBaseline, PaletteMode } from "@mui/material";
+import { CacheProvider } from "@emotion/react";
+import createCache from "@emotion/cache";
 
-import { getDesignTokens } from 'styles/theme';
+import { getDesignTokens } from "styles/theme";
 
-import IconButton from '@mui/material/IconButton';
-import Box from '@mui/material/Box';
-import { useTheme, createTheme, Theme } from '@mui/material/styles';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
+import { useTheme, createTheme, Theme } from "@mui/material/styles";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 
-const clientSideEmotionCache = createCache({ key: 'css', prepend: true });
+const clientSideEmotionCache = createCache({ key: "css", prepend: true });
 const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
 function ToggleTheme() {
@@ -22,23 +22,21 @@ function ToggleTheme() {
   return (
     <Box
       sx={{
-        display: 'flex',
-        width: '100%',
-        alignItems: 'center',
-        justifyContent: 'center',
-        bgcolor: 'background.default',
-        color: 'text.primary',
-        borderRadius: 1,
-        p: 3,
+        display: "flex",
+        width: "100%",
+        alignItems: "center",
+        justifyContent: "end",
+        bgcolor: "background.default",
+        color: "text.primary",
+        height: "50px",
       }}
     >
-      {theme.palette.mode} mode
       <IconButton
         sx={{ ml: 1 }}
         onClick={colorMode.toggleColorMode}
-        color='inherit'
+        color="inherit"
       >
-        {theme.palette.mode === 'dark' ? (
+        {theme.palette.mode === "dark" ? (
           <Brightness7Icon />
         ) : (
           <Brightness4Icon />
@@ -54,11 +52,11 @@ function MyApp({
   pageProps,
 }) {
   const router = useRouter();
-  const [mode, setMode] = React.useState<PaletteMode>('light');
+  const [mode, setMode] = React.useState<PaletteMode>("light");
   const colorMode = React.useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
       },
     }),
     []
@@ -69,8 +67,8 @@ function MyApp({
     <CacheProvider value={emotionCache}>
       <Head>
         <meta
-          name='viewport'
-          content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no'
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         />
       </Head>
       <ColorModeContext.Provider value={colorMode}>
