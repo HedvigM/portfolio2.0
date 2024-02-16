@@ -1,6 +1,5 @@
 
 import { PaletteMode, styled, Typography } from '@mui/material';
-import { cyan } from '@mui/material/colors';
 
 
 export const getDesignTokens = (mode: PaletteMode) => ({
@@ -10,12 +9,16 @@ export const getDesignTokens = (mode: PaletteMode) => ({
       ? {
           // palette values for light mode
           primary: {
-            main: '#EAF6F6',
+            main: '#FCD752', // Yellow
             contrastText: '#66BFBF'
           },
           secondary: {
-            main: '#fff',
+            main: '#61C6C6', // Light blue
             contrastText: '#FF0063',
+          },
+          tritiary: {
+            main: '#FCA3B9', // Pink
+            contrastText: '#FCD752'
           },
           text: {
             primary: 'black',
@@ -50,7 +53,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
 
 
 export const H1 = styled(Typography)((props) => ({
-    fontSize: '2rem',
+     fontSize: '2rem', 
     fontWeight: 700,
     fontFamily: 'Roboto',
     textTransform: 'uppercase',
@@ -129,7 +132,7 @@ export const Body1 = styled(Typography)((props) => ({
   fontSize: '1rem',
   fontFamily: 'Roboto',
   textAlign: 'left',
-  lineHeight: '1.7',
+  lineHeight: '1.3',
   textDecoration: 'none',
   color: props.theme.palette.text.primary,
 }))
