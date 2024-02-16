@@ -1,144 +1,80 @@
-import { Box, Card, CardMedia, Container, styled } from '@mui/material';
-import React from 'react';
-import { Body1, H2, H4, H5, H6, H6Link } from 'styles/theme';
-import { ThoughtsText, MoreThoughtsText } from './Text';
+import {
+  Box,
+  Card,
+  CardMedia,
+  Container,
+  Typography,
+  styled,
+} from "@mui/material";
+import React from "react";
+import { Body1, H2, H4, H5, H6, H6Link } from "styles/theme";
+import { ThoughtsText, MoreThoughtsText } from "./Text";
+import Brightness1Icon from "@mui/icons-material/Brightness1";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
-/* Link to the thoughts */
+const MainContainer = styled("div")((props) => ({
+  height: `calc(100vh)`,
+  padding: "30px 30px 50px 30px",
+  display: "grid",
+  gridTemplateRows: "100px 1fr",
+  backgroundColor: props.theme.palette.secondary.main,
+}));
+const PostsContainer = styled("div")((props) => ({
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "20px",
+}));
+const PostContainer = styled("div")((props) => ({
+  backgroundColor: "white",
+  borderRadius: "10px",
+  width: "100%",
+  height: "100%",
+  overflow: "hidden",
+}));
+const Div = styled("div")((props) => ({
+  borderBottom: "1px solid black",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "start",
+  padding: "3px 10px",
+}));
+const ThoughtsContainer = styled("div")((props) => ({
+  padding: " 5px 10px",
+}));
+
 export const Thoughts = () => {
   return (
-    <Box sx={{ backgroundColor: 'secondary.main', paddingBottom: '50px' }}>
-      <Container maxWidth='md'>
-        <Box
-          sx={{ display: 'flex', justifyContent: 'center', padding: '50px' }}
-        >
-          <H2>My Thoughts</H2>
-        </Box>
-        {/* mobile view - pic above instead. */}
+    <MainContainer>
+      <Typography variant="h2" textAlign="left">
+        Posts
+      </Typography>
+      <PostsContainer>
         {ThoughtsText.map((text, index) => (
-          <Card
-            key={index}
-            sx={{
-              maxWidth: 900,
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: '30px',
-              minHeight: '200px',
-            }}
+          <PostContainer
+            onClick={() => window.open(text.href, "_blank", "noopener")}
           >
-            <CardMedia
-              sx={{
-                width: '500px',
-                paddingLeft: '20px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <Box
-                sx={{
-                  padding: '10px',
-                }}
+            <Div>
+              <FiberManualRecordIcon fontSize="small" sx={{ color: "black" }} />
+              <FiberManualRecordIcon fontSize="small" sx={{ color: "black" }} />
+              <FiberManualRecordIcon fontSize="small" sx={{ color: "black" }} />
+            </Div>
+            <ThoughtsContainer>
+              <Typography key={index} variant="h6">
+                {text.name}
+              </Typography>
+              <Typography
+                key={index}
+                variant="body1"
+                sx={{ lineHeight: "1.3" }}
               >
-                <H4>{text.date}</H4>
-                <H5 sx={{ color: 'text.primary' }}>{text.name}</H5>
-                <Body1>
-                  {text.text}
-                  <Span>&nbsp;&gt;&gt;</Span>
-                </Body1>
-                <H6Link>
-                  <a
-                    aria-label='Link to the deployed project'
-                    aria-pressed='false'
-                    role='button'
-                    target='_blank'
-                    rel='noreferrer'
-                    href={text.href}
-                    style={{ textDecoration: 'none', color: 'inherit' }}
-                  >
-                    {text.more}
-                  </a>
-                </H6Link>
-              </Box>
-            </CardMedia>
-            <CardMedia
-              component='img'
-              image={text.image}
-              alt={text.alt}
-              sx={{ maxWidth: '150px' }}
-            ></CardMedia>
-          </Card>
+                {text.text}
+              </Typography>
+            </ThoughtsContainer>
+          </PostContainer>
         ))}
-
-        <Box
-          sx={{ display: 'flex', justifyContent: 'center', paddingTop: '50px' }}
-        >
-          <Heading>More Thoughts</Heading>
-        </Box>
-        <Container maxWidth='md'>
-          {MoreThoughtsText.map((text, index) => (
-            <Box key={index} sx={{ paddingBottom: '20px' }}>
-              <Box>
-                <H4>{text.date}</H4>
-                <H5 sx={{ display: 'inline' }}>
-                  <Link
-                    href={text.href}
-                    role='button'
-                    aria-pressed='false'
-                    aria-label='Link to article'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    {text.text}
-                  </Link>
-                </H5>
-                <Span>&nbsp;&gt;&gt;</Span>
-              </Box>
-              <H6Link>
-                <a
-                  aria-label='Link to the deployed project'
-                  aria-pressed='false'
-                  role='button'
-                  rel='noreferrer'
-                  target='_blank'
-                  href={text.href}
-                  style={{ textDecoration: 'none', color: 'inherit' }}
-                >
-                  {text.more}
-                </a>
-              </H6Link>
-            </Box>
-          ))}
-        </Container>
-      </Container>
-    </Box>
+      </PostsContainer>
+    </MainContainer>
   );
 };
-
-/* Make a style in the library for this one */
-const Heading = styled('p')((props) => ({
-  fontSize: '1.7rem',
-  fontWeight: '700',
-  fontFamily: 'Roboto',
-  textTransform: 'uppercase',
-  color: props.theme.palette.primary.contrastText,
-  margin: '0',
-}));
-
-const Link = styled('a')((props) => ({
-  color: props.theme.palette.text.primary,
-  textDecoration: 'none',
-
-  '&:hover': {
-    color: props.theme.palette.secondary.contrastText,
-    textDecoration: 'underline',
-  },
-}));
-const Span = styled('span')((props) => ({
-  display: 'inline',
-  fontSize: '1.15rem',
-  fontWeight: 400,
-  fontFamily: 'Roboto',
-  textTransform: 'uppercase',
-  color: props.theme.palette.primary.contrastText,
-}));
